@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,42 +12,51 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:linear-gradient(#1a0f00,#3b2400,#000);
 color:white;
 text-align:center;
-overflow-x:hidden;
+background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+background-size:cover;
+background-attachment:fixed;
+}
+
+.overlay{
+background:rgba(0,0,0,0.75);
+min-height:100vh;
 }
 
 header{
-padding:80px 20px;
+padding:100px 20px;
 }
 
 h1{
-font-size:70px;
-color:#ffcc00;
-text-shadow:3px 3px 10px black;
+font-size:80px;
+color:#ffd700;
+text-shadow:4px 4px 15px black;
 }
 
 .tagline{
-font-size:24px;
+font-size:28px;
 margin-top:10px;
-opacity:0.9;
 }
 
-button{
-padding:18px 40px;
-font-size:20px;
+.logo{
+width:180px;
+margin-top:20px;
+}
+
+.buybutton{
+padding:18px 45px;
+font-size:22px;
+background:#ffd700;
 border:none;
-border-radius:8px;
-background:#ffcc00;
-color:black;
-font-weight:bold;
+border-radius:10px;
 cursor:pointer;
+font-weight:bold;
 margin-top:30px;
 transition:0.3s;
 }
 
-button:hover{
+.buybutton:hover{
 transform:scale(1.1);
 }
 
@@ -56,32 +66,42 @@ max-width:900px;
 margin:auto;
 }
 
+.mascot{
+font-size:120px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
+}
+
 .coin{
 font-size:120px;
-animation:spin 6s linear infinite;
 margin-top:40px;
+animation:spin 6s linear infinite;
 }
 
 @keyframes spin{
-0%{transform:rotateY(0deg);}
+0%{transform:rotateY(0);}
 100%{transform:rotateY(360deg);}
 }
 
-.horse{
-font-size:80px;
-margin-top:40px;
-animation:ride 3s infinite alternate;
+.shoot{
+font-size:40px;
+margin-top:20px;
+animation:shoot 1s infinite alternate;
 }
 
-@keyframes ride{
-0%{transform:translateX(-20px);}
-100%{transform:translateX(20px);}
+@keyframes shoot{
+0%{opacity:0.4;}
+100%{opacity:1;}
 }
 
 footer{
 padding:40px;
-opacity:0.6;
-font-size:14px;
+opacity:0.7;
 }
 
 </style>
@@ -89,6 +109,8 @@ font-size:14px;
 </head>
 
 <body>
+
+<div class="overlay">
 
 <header>
 
@@ -98,67 +120,90 @@ font-size:14px;
 The Wildest Memecoin in the Crypto West
 </p>
 
+<!-- COLOQUE AQUI SEU LOGO -->
+<img src="SEU_LOGO.png" class="logo">
+
 <div class="coin">🪙</div>
 
 <a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump">
-<button>Ride the Crypto Frontier</button>
+
+<button class="buybutton">
+Ride the Crypto Frontier
+</button>
+
 </a>
 
 </header>
 
 <div class="section">
 
-<h2>🌵 The Legend</h2>
+<h2>🤠 Meet the Cowboy</h2>
+
+<div class="mascot">🤠</div>
 
 <p>
 
-In the wild west of crypto, one coin rides above the rest.
+Legend says a lone cowboy discovered a new currency  
+while riding through the wild crypto frontier.
 
-No banks. No rules. Just memes, cowboys, and the spirit of the frontier.
+That coin became...
 
-CowboyDollar isn't just a token...
-
-It's a revolution on horseback.
+<b>CowboyDollar.</b>
 
 </p>
-
-<div class="horse">🐎</div>
 
 </div>
 
 <div class="section">
 
-<h2>💰 Token Info</h2>
+<h2>💥 Wild West Energy</h2>
 
-<p><b>Name:</b> CowboyDollar</p>
-<p><b>Network:</b> Solana</p>
-<p><b>Platform:</b> Pump.fun</p>
+<div class="shoot">
 
-<p style="word-break:break-all; opacity:0.7;">
+🔫 BANG! 🔫
+
+</div>
+
+<p>
+
+No banks.  
+No suits.  
+No rules.
+
+Just memes, cowboys, and the spirit of the frontier.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>🪙 Token Info</h2>
+
+<p>Network: Solana</p>
+
+<p>Platform: Pump.fun</p>
+
+<p style="word-break:break-all;opacity:0.7">
+
 4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump
+
 </p>
-
-</div>
-
-<div class="section">
-
-<h2>🔥 Why CowboyDollar?</h2>
-
-<p>✔ 100% Meme Energy</p>
-<p>✔ Born in the Crypto Wild West</p>
-<p>✔ Community Driven</p>
-<p>✔ Built for Legends</p>
 
 </div>
 
 <footer>
 
 <p>
-CowboyDollar is a meme token made for fun and community.  
+
+CowboyDollar is a meme token created for fun and community.  
 Always DYOR.
+
 </p>
 
 </footer>
+
+</div>
 
 </body>
 </html>
