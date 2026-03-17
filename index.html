@@ -6,20 +6,28 @@
   <title>CowboyDollar 🚀</title>
 
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
       font-family: 'Trebuchet MS', sans-serif;
       color: #fff;
 
-      /* FUNDO QUE FUNCIONA 100% */
-      background: url('https://upload.wikimedia.org/wikipedia/commons/5/5e/Old_Tucson_Arizona.jpg') no-repeat center center/cover;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5e/Old_Tucson_Arizona.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
     .overlay {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85));
       min-height: 100vh;
-      padding: 20px;
+      background: rgba(0,0,0,0.7);
       text-align: center;
+      padding: 20px;
     }
 
     .logo {
@@ -32,25 +40,17 @@
     h1 {
       font-size: 3em;
       color: gold;
-      margin: 10px 0;
     }
 
     .tagline {
-      font-size: 1.3em;
-      margin-bottom: 20px;
       color: #ffcc00;
+      font-size: 1.3em;
     }
 
     .animated-text {
-      font-size: 1.6em;
+      font-size: 1.5em;
       color: #00ff99;
-      margin-top: 15px;
-      animation: glow 1.5s infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #00ff99; }
-      to { text-shadow: 0 0 25px #00ff99, 0 0 40px gold; }
+      margin-top: 10px;
     }
 
     .buttons a {
@@ -62,18 +62,6 @@
       text-decoration: none;
       border-radius: 10px;
       font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .buttons a:hover {
-      background: #ffcc00;
-      transform: scale(1.08);
-    }
-
-    .crypto {
-      margin-top: 25px;
-      font-size: 1.2em;
-      color: #ccc;
     }
 
     .contract {
@@ -81,13 +69,6 @@
       background: rgba(255,255,255,0.1);
       padding: 15px;
       border-radius: 10px;
-      word-break: break-all;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #aaa;
     }
   </style>
 </head>
@@ -95,34 +76,22 @@
 <body>
   <div class="overlay">
 
-    <img src="logo.png" alt="CowboyDollar Logo" class="logo">
+    <img src="logo.png" class="logo">
 
     <h1>🤠 CowboyDollar</h1>
-
     <div class="tagline">Ride the Wild West of Crypto 🚀</div>
 
     <div class="animated-text">🐎 Saddle Up — The Pump is Coming!</div>
-    <div class="animated-text">💰 From Dust to Dollars — 100x Journey</div>
-    <div class="animated-text">🔥 Cowboys Don’t Miss Pumps</div>
+    <div class="animated-text">💰 100x Journey Starts Here</div>
 
     <div class="buttons">
-      <a href="https://x.com/CowbowDollar" target="_blank">X (Twitter)</a>
-      <a href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank">Telegram</a>
-      <a href="https://x.com/CowbowDollar" target="_blank">Pump.fun</a>
-    </div>
-
-    <div class="crypto">
-      Powered by the spirit of Bitcoin ₿ & Ethereum Ξ — but riding faster 🤠
+      <a href="https://x.com/CowbowDollar">X</a>
+      <a href="https://t.me/+Za5YKH9mpdZlNTk5">Telegram</a>
     </div>
 
     <div class="contract">
-      <strong>📜 Contract:</strong><br>
       4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump
     </div>
-
-    <footer>
-      © 2026 CowboyDollar — Ride the pump, own the west 🐎
-    </footer>
 
   </div>
 </body>
