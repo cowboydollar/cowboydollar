@@ -88,47 +88,21 @@
       color: #aaa;
     }
   
-    /* Dust animation */
-    .dust {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 100%;
-      pointer-events: none;
-      background: url('https://www.transparenttextures.com/patterns/dust.png');
-      opacity: 0.25;
-      animation: dustMove 20s linear infinite;
-      z-index: 1;
-    }
-
-    @keyframes dustMove {
-      from { transform: translateX(0); }
+    
       to { transform: translateX(-50%); }
     }
 
   
 
-    /* Running horse animation */
-    .horse {
-      position: fixed;
-      bottom: 20px;
-      left: -200px;
-      font-size: 60px;
-      z-index: 2;
-      animation: runHorse 12s linear infinite;
-    }
-
-    @keyframes runHorse {
-      0% { left: -200px; }
+    
       100% { left: 110%; }
     }
 
   </style>
 </head>
 <body>
-  <div class="dust"></div>
-  <div class="horse">🐎</div>
+  
+  
   <div class="overlay">
     <img src="logo.png" alt="CowboyDollar Logo" class="logo">
     <h1>🤠 CowboyDollar</h1>
