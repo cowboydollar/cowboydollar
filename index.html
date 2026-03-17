@@ -16,6 +16,7 @@
       font-family: 'Trebuchet MS', sans-serif;
       color: #fff;
 
+      /* FUNDO WESTERN FUNCIONANDO */
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5e/Old_Tucson_Arizona.jpg');
       background-size: cover;
       background-position: center;
@@ -25,7 +26,7 @@
 
     .overlay {
       min-height: 100vh;
-      background: rgba(0,0,0,0.7);
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85));
       text-align: center;
       padding: 20px;
     }
@@ -40,11 +41,13 @@
     h1 {
       font-size: 3em;
       color: gold;
+      margin: 10px 0;
     }
 
     .tagline {
-      color: #ffcc00;
       font-size: 1.3em;
+      margin-bottom: 20px;
+      color: #ffcc00;
     }
 
     .animated-text {
@@ -62,6 +65,18 @@
       text-decoration: none;
       border-radius: 10px;
       font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .buttons a:hover {
+      background: #ffcc00;
+      transform: scale(1.05);
+    }
+
+    .crypto {
+      margin-top: 25px;
+      font-size: 1.2em;
+      color: #ccc;
     }
 
     .contract {
@@ -69,6 +84,13 @@
       background: rgba(255,255,255,0.1);
       padding: 15px;
       border-radius: 10px;
+      word-break: break-all;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #aaa;
     }
   </style>
 </head>
@@ -76,22 +98,34 @@
 <body>
   <div class="overlay">
 
-    <img src="logo.png" class="logo">
+    <img src="logo.png" alt="CowboyDollar Logo" class="logo">
 
     <h1>🤠 CowboyDollar</h1>
+
     <div class="tagline">Ride the Wild West of Crypto 🚀</div>
 
     <div class="animated-text">🐎 Saddle Up — The Pump is Coming!</div>
-    <div class="animated-text">💰 100x Journey Starts Here</div>
+    <div class="animated-text">💰 From Dust to Dollars — 100x Journey</div>
+    <div class="animated-text">🔥 Cowboys Don’t Miss Pumps</div>
 
     <div class="buttons">
-      <a href="https://x.com/CowbowDollar">X</a>
-      <a href="https://t.me/+Za5YKH9mpdZlNTk5">Telegram</a>
+      <a href="https://x.com/CowbowDollar" target="_blank">X (Twitter)</a>
+      <a href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank">Telegram</a>
+      <a href="https://x.com/CowbowDollar" target="_blank">Pump.fun</a>
+    </div>
+
+    <div class="crypto">
+      Powered by the spirit of Bitcoin ₿ & Ethereum Ξ — but riding faster 🤠
     </div>
 
     <div class="contract">
+      <strong>📜 Contract:</strong><br>
       4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump
     </div>
+
+    <footer>
+      © 2026 CowboyDollar — Ride the pump, own the west 🐎
+    </footer>
 
   </div>
 </body>
