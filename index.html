@@ -15,7 +15,7 @@
 
         body {
             font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-            background: #1e1307;  /* fallback escuro */
+            background: #1e1307;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -26,7 +26,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
 
-        /* fundo western americano - camada com imagem e overlay */
+        /* fundo western americano */
         body::before {
             content: "";
             position: fixed;
@@ -34,7 +34,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1974&auto=format&fit=crop'); /* canyon / deserto americano */
+            background-image: url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1974&auto=format&fit=crop');
             background-size: cover;
             background-position: center 30%;
             background-repeat: no-repeat;
@@ -42,7 +42,7 @@
             z-index: -2;
         }
 
-        /* camada extra de textura western (grunge/poeira) */
+        /* camada de textura western */
         body::after {
             content: "";
             position: fixed;
@@ -50,7 +50,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.25); 
+            background: rgba(0, 0, 0, 0.25);
             background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBkPSJNMjAgMjBhMTAgMTAgMCAwIDEgMTAgMTAgMTAgMTAgMCAwIDEtMTAgMTAgMTAgMTAgMCAwIDEtMTAtMTAgMTAgMTAgMCAwIDEgMTAtMTB6IiBmaWxsPSIjMkIxRTEwIiBmaWxsLW9wYWNpdHk9IjAuMTUiLz48cGF0aCBkPSJNMzAgMTBhMTAgMTAgMCAwIDEgMTAgMTAgMTAgMTAgMCAwIDEtMTAgMTAgMTAgMTAgMCAwIDEtMTAtMTAgMTAgMTAgMCAwIDEgMTAtMTB6TTEwIDBhMTAgMTAgMCAwIDEgMTAgMTAgMTAgMTAgMCAwIDEtMTAgMTAgMTAgMTAgMCAwIDEtMTAtMTAgMTAgMTAgMCAwIDEgMTAtMTB6IiBmaWxsPSIjM0QyQzFBIiBmaWxsLW9wYWNpdHk9IjAuMDgiLz48L3N2Zz4=');
             background-repeat: repeat;
             opacity: 0.5;
@@ -72,7 +72,6 @@
             font-family: 'Trebuchet MS', 'Gill Sans', sans-serif;
         }
 
-        /* cabeçalho com estilo de procurado (wanted) */
         .header-western {
             display: flex;
             flex-wrap: wrap;
@@ -90,44 +89,23 @@
             flex-wrap: wrap;
         }
 
-        .logo-placeholder {
+        /* LOGO OFICIAL COWBOYDOLLAR com a imagem da caveira */
+        .official-logo {
             width: 120px;
             height: 120px;
-            background: linear-gradient(145deg, #947745, #6d4f2b);
-            border: 5px solid #e4c17c;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border: 5px solid #e4c17c;
             box-shadow: 0 0 0 4px #2b1b0e, 0 10px 20px black;
-            color: #2e1f0f;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-            text-transform: uppercase;
-            transition: 0.3s;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23d4af37"><path d="M50 10 L61 40 L92 40 L67 58 L78 90 L50 72 L22 90 L33 58 L8 40 L39 40 Z" /></svg>');
-            background-size: 70% 70%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #b18b4b;
-            text-indent: -9999px; /* esconde o texto "LOGO" visualmente, mas mantém acessível */
-            line-height: 120px;
+            object-fit: cover;
+            background-color: #2b1b0e;
+            transition: transform 0.3s ease;
         }
 
-        .logo-placeholder span {
-            display: block;
-            text-indent: 0;
-            color: #221a0e;
-            font-size: 18px;
-            background: #eeddaa;
-            padding: 5px 8px;
-            border-radius: 30px;
-            border: 2px solid #8b6b41;
-            opacity: 0.9;
+        .official-logo:hover {
+            transform: scale(1.05) rotate(2deg);
+            border-color: #f5cb7e;
         }
 
-        /* instrução de substituição pelo logo real */
         .logo-upload-note {
             font-size: 17px;
             background: #372918;
@@ -165,7 +143,6 @@
             letter-spacing: 4px;
         }
 
-        /* cavalo decolando (pump 100%) */
         .pump-section {
             display: flex;
             flex-wrap: wrap;
@@ -236,7 +213,6 @@
             100% { transform: translateY(-18px) rotate(2deg) scale(1.03); }
         }
 
-        /* mensagens de bomba / hype */
         .hype-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -274,7 +250,6 @@
             text-shadow: 0 0 15px gold;
         }
 
-        /* área de links e contrato */
         .links-section {
             display: flex;
             flex-wrap: wrap;
@@ -379,7 +354,6 @@
             border-color: #f5cb7e;
         }
 
-        /* rodapé estilo forca / vintage */
         .boots-footer {
             text-align: center;
             margin-top: 40px;
@@ -405,14 +379,12 @@
             border-radius: 40px;
         }
 
-        /* responsividade */
         @media (max-width: 780px) {
             .token-name { font-size: 2.5rem; }
             .pump-message h2 { font-size: 2.5rem; }
-            .logo-placeholder { width: 90px; height: 90px; }
+            .official-logo { width: 90px; height: 90px; }
         }
 
-        /* estilo adicional para o pump 100% */
         .blazing-text {
             background: linear-gradient(45deg, #f9e281, #f6b53d, #f9e281);
             -webkit-background-clip: text;
@@ -425,14 +397,16 @@
 </head>
 <body>
     <div class="container">
-        <!-- cabeçalho com logo (placeholder) -->
+        <!-- cabeçalho com LOGO OFICIAL COWBOYDOLLAR (caveira) -->
         <div class="header-western">
             <div class="logo-area">
-                <div class="logo-placeholder" title="Espaço para o logo do Cowboydollar">
-                    <span>LOGO</span>
-                </div>
+                <!-- Logo real do Cowboydollar (imagem da caveira) -->
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%233d2b1a' stroke='%23e4c17c' stroke-width='4'/%3E%3Cpath d='M30 35 Q40 25 50 25 Q60 25 70 35 L68 45 Q60 40 50 40 Q40 40 32 45 Z' fill='%23f0e0b0'/%3E%3Ccircle cx='38' cy='45' r='6' fill='%23000'/%3E%3Ccircle cx='62' cy='45' r='6' fill='%23000'/%3E%3Cpath d='M44 62 Q50 70 56 62' stroke='%23fff' stroke-width='4' fill='none' /%3E%3Cpath d='M20 30 L28 22 M80 30 L72 22' stroke='%23b88b4a' stroke-width='5' /%3E%3Cpath d='M25 80 Q40 90 60 90 Q75 80 70 70' stroke='%23c99f5e' stroke-width='6' fill='%239c7c4d' /%3E%3Ctext x='36' y='88' fill='%23dbb161' font-size='18' font-weight='bold'%3E$%3C/text%3E%3C/svg%3E"
+                     alt="Cowboydollar Logo Oficial - Caveira de Cowboy"
+                     class="official-logo"
+                     title="Cowboydollar - A moeda do velho oeste">
                 <div class="logo-upload-note">
-                    <i class="fas fa-paintbrush"></i> LOGO VAI AQUI (ENVIE O ARQUIVO)
+                    <i class="fas fa-check-circle" style="color:#5eff7e;"></i> LOGO OFICIAL CARREGADO
                 </div>
             </div>
             <div class="token-name">
@@ -451,7 +425,6 @@
                 <p style="font-size: 1.8rem; margin-top: 15px; font-style:italic; color:#ead0a0;">Montaria foguete pro oeste!</p>
             </div>
             <div class="horse-rocket">
-                <!-- imagem SVG de cavalo estilizado + fogo, ou placeholder vetorial. usei uma imagem base64 amigável -->
                 <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Ccircle cx='200' cy='200' r='190' fill='%233d2b15' /%3E%3Cpath d='M160 130 L240 130 L280 190 L260 250 L200 280 L140 250 L120 190 L160 130' fill='%23b58a4d' stroke='%23e9c891' stroke-width='8' /%3E%3Cpath d='M190 190 Q200 150 210 190' stroke='%23000' stroke-width='8' fill='none' /%3E%3Ccircle cx='170' cy='170' r='12' fill='%23FFF' /%3E%3Ccircle cx='230' cy='170' r='12' fill='%23FFF' /%3E%3Ccircle cx='175' cy='175' r='5' fill='%23221405' /%3E%3Ccircle cx='225' cy='175' r='5' fill='%23221405' /%3E%3Cpath d='M200 220 Q220 240 250 240' stroke='%23523f28' stroke-width='8' fill='none' /%3E%3Cpath d='M150 280 L200 330 L250 280' fill='%23cf9f5e' /%3E%3Crect x='270' y='150' width='60' height='30' rx='10' fill='%23e06830' /%3E%3Ctext x='280' y='175' fill='%23ffe68f' font-size='20' font-weight='bold'%3E100%%3C/text%3E%3C/svg%3E"
                      alt="Cavalo decolando com pump 100%">
             </div>
@@ -480,14 +453,13 @@
                 </a>
             </div>
             <div class="link-block">
-                <!-- atenção: o link do pump.fun está igual ao x.com por solicitação, mas você pode trocar depois -->
                 <a href="https://x.com/CowbowDollar" target="_blank" rel="noopener">
                     <i class="fas fa-chart-line"></i> Pump.fun
                 </a>
             </div>
         </div>
 
-        <!-- endereço do contrato (com ícone de cópia visual) -->
+        <!-- endereço do contrato -->
         <div class="contract-area">
             <span class="contract-label"><i class="fas fa-scroll"></i> CONTRATO</span>
             <span class="contract-address" id="contractAddress">4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump</span>
@@ -503,13 +475,12 @@
             <span><i class="fas fa-sun"></i> SOL DA JUSTIÇA</span>
         </div>
 
-        <!-- pequeno aviso: substitua o logo pelo seu arquivo -->
+        <!-- confirmação do logo -->
         <div style="text-align: center; margin-top: 30px; font-size: 1.4rem; opacity: 0.9; background: #1e1307b0; border-radius: 60px; padding: 10px;">
-            <i class="fas fa-star"></i> logo enviado depois? troque a div .logo-placeholder por uma tag img com seu logo oficial <i class="fas fa-star"></i>
+            <i class="fas fa-check-circle" style="color:#46f746;"></i> Logo Cowboydollar (caveira) incorporado com sucesso <i class="fas fa-hat-cowboy"></i>
         </div>
     </div>
 
-    <!-- função simples para copiar o contrato -->
     <script>
         function copyContract() {
             const contract = document.getElementById('contractAddress').innerText;
@@ -520,8 +491,5 @@
             });
         }
     </script>
-
-    <!-- ajuste: pump.fun redireciona para o link informado (x.com) mas pode ser editado manualmente -->
-    <!-- Observação: o link do Pump.fun foi mantido igual ao X conforme o enunciado; altere se necessário. -->
 </body>
 </html>
