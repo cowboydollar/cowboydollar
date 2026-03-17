@@ -1,75 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>CowboyDollar</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CowboyDollar 🚀</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial;
-      text-align: center;
-      color: white;
-
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-      url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');
-      background-size: cover;
+      font-family: 'Trebuchet MS', sans-serif;
+      color: #fff;
+      background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') no-repeat center center/cover;
     }
 
-    img {
-      width: 150px;
-      margin-top: 30px;
-      border-radius: 50%;
-      border: 3px solid gold;
-    }
-
-    h1 { color: gold; }
-
-    button {
-      background: gold;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    section {
-      margin: 40px;
-      background: rgba(0,0,0,0.6);
+    .overlay {
+      background: rgba(0,0,0,0.7);
+      min-height: 100vh;
       padding: 20px;
-      border-radius: 10px;
+      text-align: center;
     }
 
-    a { color: gold; }
+    .logo {
+      width: 220px;
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 20px gold;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: gold;
+      margin: 10px 0;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background: gold;
+      color: black;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .buttons a:hover {
+      background: #ffcc00;
+      transform: scale(1.05);
+    }
+
+    .pump {
+      margin-top: 30px;
+      font-size: 1.8em;
+      color: #00ff99;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0% {opacity: 1;}
+      50% {opacity: 0.5;}
+      100% {opacity: 1;}
+    }
+
+    .contract {
+      margin-top: 20px;
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 10px;
+      word-break: break-all;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
   </style>
 </head>
-
 <body>
+  <div class="overlay">
+    <img src="logo.png" alt="CowboyDollar Logo" class="logo">
+    <h1>🤠 CowboyDollar</h1>
+    <p>A meme coin do velho oeste pronta pra decolar 🚀</p>
 
-  <img src="logo.jpg">
+    <div class="pump">🐎 PUMP 100% - TO THE MOON 🚀</div>
 
-  <h1>🤠 CowboyDollar</h1>
+    <div class="buttons">
+      <a href="https://x.com/CowbowDollar" target="_blank">X (Twitter)</a>
+      <a href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank">Telegram</a>
+      <a href="https://x.com/CowbowDollar" target="_blank">Pump.fun</a>
+    </div>
 
-  <p>
-    <a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump">
-      "Draw fast. Earn faster."
-    </a>
-  </p>
+    <div class="contract">
+      <strong>📜 Contrato:</strong><br>
+      COLE_SEU_CONTRATO_AQUI
+    </div>
 
-  <a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump">
-    <button>Buy Now</button>
-  </a>
-
-  <section>
-    <h2>Contract</h2>
-    <code>4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump</code>
-  </section>
-
-  <section>
-    <h2>Follow</h2>
-    <a href="https://x.com/CowbowDollar">X Profile</a>
-  </section>
-
+    <footer>
+      © 2026 CowboyDollar - Ride the pump 🤠
+    </footer>
+  </div>
 </body>
 </html>
