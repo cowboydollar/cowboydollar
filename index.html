@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +9,11 @@
       margin: 0;
       font-family: 'Trebuchet MS', sans-serif;
       color: #fff;
-      background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') no-repeat center center/cover;
     }
 
     .overlay {
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.75);
       min-height: 100vh;
       padding: 20px;
       text-align: center;
@@ -23,7 +23,7 @@
       width: 220px;
       border-radius: 20px;
       margin-top: 20px;
-      box-shadow: 0 0 20px gold;
+      box-shadow: 0 0 25px gold;
     }
 
     h1 {
@@ -32,8 +32,22 @@
       margin: 10px 0;
     }
 
-    p {
-      font-size: 1.2em;
+    .tagline {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+
+    .animated-text {
+      font-size: 1.6em;
+      color: #00ff99;
+      margin-top: 20px;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ff99; }
+      to { text-shadow: 0 0 25px #00ff99, 0 0 40px gold; }
     }
 
     .buttons a {
@@ -50,20 +64,13 @@
 
     .buttons a:hover {
       background: #ffcc00;
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
-    .pump {
-      margin-top: 30px;
-      font-size: 1.8em;
-      color: #00ff99;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      0% {opacity: 1;}
-      50% {opacity: 0.5;}
-      100% {opacity: 1;}
+    .crypto {
+      margin-top: 25px;
+      font-size: 1.2em;
+      color: #ccc;
     }
 
     .contract {
@@ -77,7 +84,7 @@
     footer {
       margin-top: 40px;
       font-size: 0.9em;
-      color: #ccc;
+      color: #aaa;
     }
   </style>
 </head>
@@ -85,9 +92,12 @@
   <div class="overlay">
     <img src="logo.png" alt="CowboyDollar Logo" class="logo">
     <h1>🤠 CowboyDollar</h1>
-    <p>A meme coin do velho oeste pronta pra decolar 🚀</p>
 
-    <div class="pump">🐎 PUMP 100% - TO THE MOON 🚀</div>
+    <div class="tagline">Ride the Wild West of Crypto 🚀</div>
+
+    <div class="animated-text">🐎 Saddle Up — The Pump is Coming!</div>
+    <div class="animated-text">💰 From Dust to Dollars — 100x Journey</div>
+    <div class="animated-text">🔥 Cowboys Don’t Miss Pumps</div>
 
     <div class="buttons">
       <a href="https://x.com/CowbowDollar" target="_blank">X (Twitter)</a>
@@ -95,13 +105,17 @@
       <a href="https://x.com/CowbowDollar" target="_blank">Pump.fun</a>
     </div>
 
+    <div class="crypto">
+      Powered by the spirit of Bitcoin ₿ & Ethereum Ξ — but riding faster 🤠
+    </div>
+
     <div class="contract">
-      <strong>📜 Contrato:</strong><br>
+      <strong>📜 Contract:</strong><br>
       4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump
     </div>
 
     <footer>
-      © 2026 CowboyDollar - Ride the pump 🤠
+      © 2026 CowboyDollar — Ride the pump, own the west 🐎
     </footer>
   </div>
 </body>
