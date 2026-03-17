@@ -5,109 +5,122 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CowboyDollar - Wild West Meme Coin</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Creepster&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
     body {
-      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('background.jpg') center/cover no-repeat fixed;
-      font-family: 'Press Start 2P', system-ui;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+                  url('https://images.unsplash.com/photo-1508186735920-0d7d37801b6e?auto=format&fit=crop&q=80') center/cover no-repeat fixed;
+      font-family: 'Press Start 2P', cursive;
+      color: #FFD700; /* dourado cowboy */
     }
     .hero {
-      background: linear-gradient(180deg, rgba(139,69,19,0.6), rgba(139,69,19,0.9));
+      background: linear-gradient(to bottom, rgba(139,69,19,0.4), rgba(0,0,0,0.8));
     }
-    .cowboy-text {
-      text-shadow: 4px 4px 0 #FFD700, -4px -4px 0 #8B4513;
-      animation: pump 2s infinite alternate;
+    .cowboy-title {
+      font-family: 'Creepster', cursive;
+      text-shadow: 6px 6px 0 #8B4513, -6px -6px 0 #8B4513, 0 0 20px #FFD700;
+      animation: pump 1.8s infinite alternate;
     }
     @keyframes pump {
       0% { transform: scale(1); }
-      100% { transform: scale(1.08); }
+      100% { transform: scale(1.12); }
     }
-    .horse {
-      animation: decolar 4s infinite;
+    .horse-decola {
+      animation: decolar 3.5s infinite ease-in-out;
+      font-size: 6rem;
     }
     @keyframes decolar {
-      0% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-30px) rotate(8deg); }
-      100% { transform: translateY(0) rotate(0deg); }
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-40px) rotate(10deg); }
+    }
+    .wanted-border {
+      border: 8px solid #8B4513;
+      border-image: linear-gradient(to right, #FFD700, #8B4513) 1;
+      box-shadow: 0 0 30px rgba(255,215,0,0.5);
     }
   </style>
 </head>
-<body class="bg-zinc-950 text-white">
+<body class="min-h-screen bg-black text-yellow-400">
 
-  <!-- HERO - Fundo Velho Oeste + Cavalo decolando -->
-  <header class="hero min-h-screen flex items-center justify-center text-center px-6">
-    <div class="max-w-4xl mx-auto">
-      <!-- Seu logo -->
-      <img src="logo.png" alt="CowboyDollar Logo" class="mx-auto w-64 md:w-96 mb-8 drop-shadow-2xl">
+  <!-- HERO -->
+  <header class="hero min-h-screen flex flex-col items-center justify-center text-center px-4 py-12">
+    <!-- Logo -->
+    <img src="logo.png" alt="CowboyDollar Logo" class="w-48 md:w-72 mb-6 drop-shadow-2xl rounded-full border-4 border-amber-600">
 
-      <h1 class="text-7xl md:text-8xl font-bold cowboy-text text-yellow-400 mb-4 tracking-widest">
-        COWBOYDOLLAR
-      </h1>
-      <p class="text-2xl md:text-3xl text-amber-300 mb-8">CWD • Wild West Meme Coin</p>
+    <h1 class="text-6xl md:text-8xl font-bold cowboy-title mb-4 tracking-wide">
+      COWBOYDOLLAR
+    </h1>
+    <p class="text-3xl md:text-4xl mb-6">CWD • Wild West Meme Coin 🤠</p>
 
-      <!-- Cavalo pumping -->
-      <div class="flex justify-center mb-8">
-        <span class="text-8xl horse">🐎🚀</span>
-      </div>
-      <p class="text-4xl font-bold text-green-400 mb-10 animate-pulse">
-        100% PUMP • TO THE MOON! 🌕
-      </p>
-
-      <a href="https://pump.fun/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" 
-         target="_blank"
-         class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-3xl px-12 py-6 rounded-xl transition-all hover:scale-110 shadow-2xl">
-        🛒 COMPRE AGORA NO PUMP.FUN
-      </a>
-
-      <p class="mt-6 text-sm opacity-70">Contrato: 4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump</p>
+    <!-- Cavalo decolando -->
+    <div class="mb-8">
+      <span class="horse-decola">🐎🚀</span>
     </div>
+
+    <p class="text-4xl md:text-5xl font-bold text-green-400 mb-10 animate-pulse">
+      100% PUMP • TO THE MOON! 🌕🔥
+    </p>
+
+    <a href="https://pump.fun/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" 
+       target="_blank" rel="noopener noreferrer"
+       class="inline-block bg-amber-500 hover:bg-amber-400 text-black font-bold text-3xl px-10 py-6 rounded-2xl transition-all transform hover:scale-110 shadow-2xl wanted-border">
+       🛒 COMPRE AGORA NO PUMP.FUN
+    </a>
+
+    <p class="mt-4 text-lg opacity-80 font-mono break-all max-w-xl">
+      Contrato: <span id="contract">4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump</span>
+    </p>
   </header>
 
-  <!-- Links sociais -->
-  <section class="py-16 bg-black/80">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl text-amber-300 mb-10">Junte-se ao Rodeio! 🤠</h2>
-      <div class="flex flex-wrap justify-center gap-8">
-        <a href="https://x.com/CowbowDollar" target="_blank" 
-           class="flex items-center gap-3 bg-zinc-900 hover:bg-zinc-800 px-8 py-4 rounded-2xl text-xl font-bold transition">
-          <span class="text-3xl">𝕏</span> Twitter / X
+  <!-- Social -->
+  <section class="py-16 bg-black/70 wanted-border mx-4 md:mx-20 rounded-3xl">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-5xl mb-10 text-amber-300">Junte-se ao Rodeio, Parceiro! 🤠🔫</h2>
+      <div class="flex flex-wrap justify-center gap-10">
+        <a href="https://x.com/CowbowDollar" target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-4 bg-zinc-900 hover:bg-zinc-800 px-10 py-5 rounded-xl text-2xl font-bold transition transform hover:scale-105">
+          <span class="text-4xl">𝕏</span> X / Twitter
         </a>
-        <a href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank" 
-           class="flex items-center gap-3 bg-zinc-900 hover:bg-zinc-800 px-8 py-4 rounded-2xl text-xl font-bold transition">
-          <span class="text-3xl">📡</span> Telegram
+        <a href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-4 bg-zinc-900 hover:bg-zinc-800 px-10 py-5 rounded-xl text-2xl font-bold transition transform hover:scale-105">
+          <span class="text-4xl">📡</span> Telegram
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Contrato -->
-  <section class="py-16 bg-gradient-to-b from-black to-zinc-950">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl mb-8 text-yellow-400">CONTRATO SOLANA</h2>
-      <div class="bg-zinc-900 p-8 rounded-3xl border-4 border-amber-600 max-w-2xl mx-auto">
-        <p id="contract" class="font-mono text-lg break-all text-green-300 mb-6">
+  <!-- Contrato Section -->
+  <section class="py-16 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-4xl mb-8">CONTRATO SOLANA</h2>
+      <div class="bg-zinc-900 p-8 rounded-3xl border-4 border-amber-700 wanted-border">
+        <p class="font-mono text-xl break-all text-green-300 mb-6" id="contract-full">
           4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump
         </p>
         <button onclick="copyContract()" 
-                class="bg-green-500 hover:bg-green-600 text-black font-bold px-10 py-4 rounded-2xl text-xl transition">
+                class="bg-green-600 hover:bg-green-500 text-black font-bold px-12 py-5 rounded-2xl text-2xl transition transform hover:scale-105">
           📋 COPIAR CONTRATO
         </button>
       </div>
-      <p class="mt-8 text-sm opacity-70">Tired of rugs? $CWD is here to save your wallet. No utility, no roadmap, just pure meme magic and green candles! 🔥</p>
+      <p class="mt-10 text-lg opacity-80">
+        Cansado de rugs? $CWD veio pra salvar sua carteira. Sem utility, sem roadmap, só meme puro e candles verdes! 🔥🐎
+      </p>
     </div>
   </section>
 
-  <footer class="py-8 text-center text-xs opacity-50">
-    CowboyDollar © 2026 • Meme coin fair launch • DYOR • NFA
+  <footer class="py-8 text-center text-sm opacity-60 bg-black/80">
+    CowboyDollar © 2026 • Fair Launch Meme Coin • DYOR • NFA • Wild West Rules!
   </footer>
 
   <script>
     function copyContract() {
-      const text = document.getElementById("contract").innerText;
-      navigator.clipboard.writeText(text);
-      alert("✅ Contrato copiado! Cole no Phantom ou Solflare 🐎");
+      const text = document.getElementById("contract").innerText || document.getElementById("contract-full").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("✅ Contrato copiado! Cole no seu wallet Solana e bora pump! 🐎🚀");
+      }).catch(() => {
+        alert("Erro ao copiar. Selecione manualmente o texto.");
+      });
     }
-    // Tailwind script já carregado
   </script>
 </body>
 </html>
