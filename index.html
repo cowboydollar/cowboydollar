@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Creepster&display=swap" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
                   url('https://images.unsplash.com/photo-1508186735920-0d7d37801b6e?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat fixed;
       font-family: 'Press Start 2P', cursive;
       color: #FFD700;
-      line-height: 1.5; /* melhora legibilidade e evita corte/desfoque */
+      line-height: 1.5;
     }
     .hero {
-      background: linear-gradient(to bottom, rgba(139,69,19,0.3), rgba(0,0,0,0.7));
+      background: linear-gradient(to bottom, rgba(139,69,19,0.25), rgba(0,0,0,0.7));
     }
     .cowboy-title {
       font-family: 'Creepster', cursive;
@@ -24,11 +24,11 @@
     }
     @keyframes pump {
       0% { transform: scale(1); }
-      100% { transform: scale(1.05); } /* animação mais suave, menos agressiva */
+      100% { transform: scale(1.05); }
     }
     .horse-decola {
       animation: decolar 4s infinite ease-in-out;
-      font-size: 5rem; /* emoji maior mas controlado */
+      font-size: 5rem;
     }
     @keyframes decolar {
       0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -39,7 +39,6 @@
       border-image: linear-gradient(to right, #FFD700, #8B4513) 1;
       box-shadow: 0 0 20px rgba(255,215,0,0.4);
     }
-    /* Reduz tamanhos gerais para evitar desfoque */
     h1 { font-size: 3.5rem; @media (min-width: 768px) { font-size: 5rem; } }
     h2 { font-size: 2.5rem; }
     p.big { font-size: 1.8rem; }
@@ -50,7 +49,6 @@
 
   <!-- HERO -->
   <header class="hero min-h-screen flex flex-col items-center justify-center text-center px-6 py-12">
-    <!-- Logo (suba logo.png na raiz) -->
     <img src="logo.png" alt="CowboyDollar Logo" class="w-40 md:w-64 mb-6 drop-shadow-2xl rounded-full border-4 border-amber-600">
 
     <h1 class="cowboy-title mb-4 tracking-wide">
@@ -69,18 +67,18 @@
     <a href="https://pump.fun/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" 
        target="_blank" rel="noopener noreferrer"
        class="inline-block bg-amber-500 hover:bg-amber-400 text-black font-bold big wanted-border rounded-2xl transition-all transform hover:scale-105 shadow-2xl">
-       🛒 COMPRE AGORA NO PUMP.FUN
+       🛒 BUY NOW ON PUMP.FUN
     </a>
 
     <p class="mt-6 text-lg opacity-80 font-mono break-all max-w-xl">
-      Contrato: <span id="contract">4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump</span>
+      Contract: <span id="contract">4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump</span>
     </p>
   </header>
 
   <!-- Social -->
   <section class="py-12 bg-black/70 wanted-border mx-6 md:mx-20 rounded-3xl">
     <div class="max-w-5xl mx-auto text-center">
-      <h2 class="mb-8 text-amber-300">Junte-se ao Rodeio, Parceiro! 🤠🔫</h2>
+      <h2 class="mb-8 text-amber-300">Join the Rodeo, Partner! 🤠🔫</h2>
       <div class="flex flex-wrap justify-center gap-8">
         <a href="https://x.com/CowbowDollar" target="_blank" rel="noopener noreferrer"
            class="flex items-center gap-3 bg-zinc-900 hover:bg-zinc-800 px-8 py-4 rounded-xl text-xl font-bold transition transform hover:scale-105">
@@ -94,21 +92,21 @@
     </div>
   </section>
 
-  <!-- Contrato -->
+  <!-- Contract -->
   <section class="py-12 text-center">
     <div class="max-w-3xl mx-auto px-6">
-      <h2 class="mb-6">CONTRATO SOLANA</h2>
+      <h2 class="mb-6">SOLANA CONTRACT</h2>
       <div class="bg-zinc-900 p-6 rounded-3xl border-4 border-amber-700 wanted-border">
         <p class="font-mono text-lg break-all text-green-300 mb-6" id="contract-full">
           4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump
         </p>
         <button onclick="copyContract()" 
                 class="bg-green-600 hover:bg-green-500 text-black font-bold big rounded-2xl transition transform hover:scale-105">
-          📋 COPIAR CONTRATO
+          📋 COPY CONTRACT
         </button>
       </div>
       <p class="mt-8 text-base opacity-80">
-        Cansado de rugs? $CWD veio pra salvar sua carteira. Sem utility, sem roadmap, só meme puro e candles verdes! 🔥🐎
+        Tired of rugs? $CWD is here to save your wallet. No utility, no roadmap — just pure meme magic and green candles! 🔥🐎
       </p>
     </div>
   </section>
@@ -121,9 +119,9 @@
     function copyContract() {
       const text = document.getElementById("contract").innerText || document.getElementById("contract-full").innerText;
       navigator.clipboard.writeText(text).then(() => {
-        alert("✅ Contrato copiado! Cole no Phantom/Solflare e bora pump! 🐎🚀");
+        alert("✅ Contract copied! Paste into your Solana wallet and let's pump! 🐎🚀");
       }).catch(() => {
-        alert("Erro ao copiar – selecione o texto manualmente.");
+        alert("Copy error – select the text manually.");
       });
     }
   </script>
