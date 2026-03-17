@@ -1,174 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CowboyDollar</title>
+<meta charset="UTF-8">
+<title>CowboyDollar</title>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      text-align: center;
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  text-align: center;
 
-      /* FUNDO TEMÁTICO */
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-      url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.95)),
+  url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 
-    h1 {
-      color: gold;
-      font-size: 3em;
-      margin-top: 20px;
-    }
+/* LOGO ANIMADA */
+@keyframes glow {
+  0% { box-shadow: 0 0 10px gold; }
+  50% { box-shadow: 0 0 35px gold; }
+  100% { box-shadow: 0 0 10px gold; }
+}
 
-    h2 {
-      color: #ffd700;
-    }
+.logo img {
+  width: 220px;
+  border-radius: 50%;
+  border: 3px solid gold;
+  animation: glow 2s infinite;
+  margin-top: 30px;
+}
 
-    .logo {
-      margin-top: 30px;
-    }
+/* TITULOS */
+h1 {
+  color: gold;
+  font-size: 3.2em;
+  margin-top: 10px;
+}
 
-    .logo img {
-      width: 150px;
-      border-radius: 50%;
-      border: 3px solid gold;
-      box-shadow: 0 0 20px gold;
-    }
+h2 {
+  color: #ffd700;
+  margin-top: 10px;
+}
 
-    button {
-      background: gold;
-      color: black;
-      padding: 15px 30px;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 10px;
-      font-size: 16px;
-      margin-top: 20px;
-    }
+/* BOTÃO */
+button {
+  background: linear-gradient(45deg, gold, orange);
+  color: black;
+  padding: 15px 35px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 18px;
+  margin-top: 25px;
+  transition: 0.3s;
+}
 
-    button:hover {
-      background: #ffd700;
-      transform: scale(1.05);
-    }
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px gold;
+}
 
-    section {
-      margin: 50px 20px;
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
-      border-radius: 15px;
-    }
+/* SEÇÕES */
+section {
+  margin: 50px auto;
+  max-width: 800px;
+  background: rgba(0,0,0,0.65);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
 
-    hr {
-      margin: 40px;
-      border: 1px solid #333;
-    }
+/* LINKS */
+a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    a {
-      color: #ffd700;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* CODE */
+code {
+  background: #111;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 8px;
+  margin-top: 10px;
+}
 
-    code {
-      background: #111;
-      padding: 10px;
-      display: inline-block;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
-  </style>
+/* ANIMAÇÃO ENTRADA */
+.fade-in {
+  animation: fade 1.5s ease-in;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- LOGO -->
-  <div class="logo">
-    <img src="assets/logo.png" alt="CowboyDollar Logo">
-  </div>
+<!-- LOGO -->
+<div class="logo fade-in">
+  <img src="assets/logo.png" alt="CowboyDollar Logo">
+</div>
 
-  <h1>🤠 CowboyDollar — Rule the Wild West of Crypto</h1>
+<h1 class="fade-in">🤠 CowboyDollar</h1>
+<h2 class="fade-in">The Wild West of Crypto Starts Here</h2>
 
-  <p>
-    <a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
-      <em>"Draw fast. Earn faster."</em>
-    </a>
-  </p>
+<p class="fade-in">
+  <em>"Draw fast. Earn faster."</em>
+</p>
+
+<a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
+  <button>🚀 Buy Now, Partner</button>
+</a>
+
+<section class="fade-in">
+  <h2>🌎 Join the Outlaws</h2>
+  <p>Early adopters are already riding the CowboyDollar wave.</p>
+  <p>Don’t get left behind in the dust.</p>
+</section>
+
+<section class="fade-in">
+  <h2>💰 Where to Buy</h2>
+  <p>Available now on Pump.fun:</p>
+  <a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
+    👉 Buy CowboyDollar
+  </a>
+</section>
+
+<section class="fade-in">
+  <h2>🔥 Why CowboyDollar?</h2>
+  <ul style="list-style: none; padding: 0;">
+    <li>📈 Growing community</li>
+    <li>💣 Explosive potential</li>
+    <li>🚀 Early entry advantage</li>
+  </ul>
+  <p><strong>"This ain't just investing… it's a financial duel."</strong></p>
+</section>
+
+<section class="fade-in">
+  <h2>🧾 Transparency</h2>
+  <p>Official Contract:</p>
+  <code>4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump</code>
+
+  <br><br>
 
   <a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
-    <button>🟡 Buy Now, Partner</button>
+    🔍 View on Pump.fun
+  </a>
+</section>
+
+<section class="fade-in">
+  <h2>📢 Follow the Sheriff</h2>
+
+  <a href="https://x.com/CowboyDollar" target="_blank">
+    🤠 Follow @CowboyDollar
   </a>
 
-  <section>
-    <h2>💰 Where to Buy</h2>
-    <p>Available now on Pump.fun:</p>
-    <a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
-      👉 Buy CowboyDollar
-    </a>
-  </section>
+  <p><em>"If you ain't watching… you're eating dust."</em></p>
+</section>
 
-  <section>
-    <h2>About CowboyDollar</h2>
-    <p>
-      CowboyDollar isn’t just another meme coin.
-      It’s attitude. It’s risk. It’s the Wild West spirit on the blockchain.
-    </p>
-    <p>
-      While others follow the herd… you ride ahead.
-    </p>
-  </section>
-
-  <section>
-    <h2>🔥 The Next Big Ride</h2>
-    <ul style="list-style: none; padding: 0;">
-      <li>📈 Growing community</li>
-      <li>💣 Explosive pump potential</li>
-      <li>🚀 Early entry advantage</li>
-    </ul>
-    <p><strong>"This ain't just investing… it's a financial duel."</strong></p>
-  </section>
-
-  <section>
-    <h2>🧾 Sheriff’s Transparency</h2>
-    <p>Official Contract Address:</p>
-    <code>4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump</code>
-
-    <br><br>
-
-    <a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
-      🔍 View on Pump.fun
-    </a>
-
-    <p><em>No tricks. No traps. Just the wild ride.</em></p>
-  </section>
-
-  <section>
-    <h2>📢 Follow the Sheriff</h2>
-
-    <a href="https://x.com/CowbowDollar/status/2033201402290274749" target="_blank">
-      👉 View Latest Post
-    </a>
-
-    <br><br>
-
-    <a href="https://x.com/CowbowDollar" target="_blank">
-      🤠 Follow @CowbowDollar
-    </a>
-
-    <p><em>"If you ain't watching… you're eating dust."</em></p>
-  </section>
-
-  <section>
-    <p>Ride or get left behind.</p>
-    <p>This coin doesn’t walk… it rides.</p>
-    <p>Fortune favors the bold.</p>
-  </section>
+<section class="fade-in">
+  <h2>⚠️ Disclaimer</h2>
+  <p>This is a meme coin. High risk. High reward.</p>
+  <p>Only invest what you can afford to lose.</p>
+</section>
 
 </body>
 </html>
