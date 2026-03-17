@@ -15,7 +15,7 @@
       line-height: 1.5;
     }
     .hero {
-      background: linear-gradient(to bottom, rgba(139,69,19,0.25), rgba(0,0,0,0.75));
+      background: linear-gradient(to bottom, rgba(139,69,19,0.3), rgba(0,0,0,0.75));
     }
     .cowboy-title {
       font-family: 'Creepster', cursive;
@@ -25,6 +25,10 @@
     @keyframes pump {
       0% { transform: scale(1); }
       100% { transform: scale(1.05); }
+    }
+    .logo-container {
+      max-width: 400px; /* ajusta o tamanho máximo do logo */
+      margin: 0 auto 2rem;
     }
     .horse-decola {
       animation: decolar 4s infinite ease-in-out;
@@ -47,9 +51,12 @@
 </head>
 <body class="min-h-screen bg-black text-yellow-400">
 
-  <!-- HERO -->
+  <!-- HERO com logo no topo -->
   <header class="hero min-h-screen flex flex-col items-center justify-center text-center px-6 py-12">
-    <img src="logo.png" alt="CowboyDollar Logo" class="w-40 md:w-64 mb-6 drop-shadow-2xl rounded-full border-4 border-amber-600">
+    <!-- Logo grande no topo -->
+    <div class="logo-container">
+      <img src="logo.png" alt="CowboyDollar Logo" class="w-full drop-shadow-2xl rounded-full border-8 border-amber-600 wanted-border">
+    </div>
 
     <h1 class="cowboy-title mb-4 tracking-wide">
       COWBOYDOLLAR
