@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,45 +9,49 @@
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      /* MAIS CLARO PRA APARECER O FUNDO */
       background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('./cowboy-bg.png');
+      background-size: cover;
+      background-attachment: fixed;
       color: #fff;
       text-align: center;
     }
-
     header {
       padding: 50px 20px 20px;
     }
-
     h1 {
       font-family: 'Rye', cursive;
-    h1 {
-    font-size: 4rem;
-}
+      font-size: 4rem;
       color: #f5c542;
       margin-bottom: 10px;
       text-shadow: 0 0 10px rgba(255,215,0,0.7);
     }
-
     .logo {
       width: 200px;
       border-radius: 50%;
       box-shadow: 0 0 30px rgba(255,215,0,0.9);
       animation: pulse 2s infinite;
     }
-
     @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 20px rgba(255,215,0,0.6);} 
-      50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(255,215,0,1);} 
-      100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,215,0,0.6);} 
+      0% { transform: scale(1); box-shadow: 0 0 20px rgba(255,215,0,0.6);}
+      50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(255,215,0,1);}
+      100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,215,0,0.6);}
     }
-
     .container {
-      max-width: 900px;
+      max-width: 1200px;
       margin: auto;
       padding: 20px;
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
     }
-
+    .main-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .sidebar {
+      width: 420px;
+      flex-shrink: 0;
+    }
     .card {
       background: rgba(0,0,0,0.55);
       border: 1px solid #f5c542;
@@ -56,13 +60,11 @@
       margin: 20px 0;
       box-shadow: 0 0 25px rgba(255,215,0,0.3);
     }
-
     a {
       color: #f5c542;
       text-decoration: none;
       font-weight: bold;
     }
-
     .btn {
       display: inline-block;
       margin: 10px;
@@ -73,84 +75,126 @@
       font-weight: bold;
       transition: 0.3s;
     }
-
     .btn:hover {
       background: #ffd700;
       transform: scale(1.08);
     }
-
     .buy-btn {
       background: #00ff9f;
       color: #000;
       font-size: 1.2rem;
       box-shadow: 0 0 20px rgba(0,255,159,0.7);
     }
-
+    .tradingview-widget-container {
+      height: 520px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid #f5c542;
+    }
     footer {
       margin-top: 40px;
       padding: 20px;
       font-size: 0.9rem;
       opacity: 0.8;
     }
+
+    /* Responsivo - painel vai para baixo no celular */
+    @media (max-width: 1024px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
-
 <header id="main">
   <h1>CowboyDollar</h1>
   <p>Ride the trend before it explodes 🚀</p>
-  <a class="btn buy-btn" <a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
+  <a class="btn buy-btn" href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
     Buy on Pump.fun
-</a>
+  </a>
+</header>
 
 <div class="container">
-
-  <div class="card">
-    <h2>🤠 The Story</h2>
-    <p>
-      In a lawless land of crypto... where only the bold survive...
-      a new currency rises from the dust.
-      <br><br>
-      CowboyDollar isn't just a meme — it's a movement.
-    </p>
+  <!-- CONTEÚDO PRINCIPAL (esquerda) -->
+  <div class="main-content">
+    <div class="card">
+      <h2>🤠 The Story</h2>
+      <p>
+        In a lawless land of crypto... where only the bold survive...<br><br>
+        a new currency rises from the dust.<br>
+        CowboyDollar isn't just a meme — it's a movement.
+      </p>
+    </div>
+    <div class="card">
+      <h2>📜 About</h2>
+      <p>
+        A Wild West inspired memecoin built for the community.<br>
+        Early riders get the biggest rewards.
+      </p>
+    </div>
+    <div class="card">
+      <h2>🔗 Official Links</h2>
+      <p>
+        <a href="https://x.com/CowbowDollar" target="_blank">X (Twitter)</a><br>
+        <a href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank">Telegram</a><br>
+        <a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">Buy on Pump.fun</a>
+      </p>
+    </div>
+    <div class="card">
+      <h2>📄 Contract Address</h2>
+      <p style="word-break: break-all;">
+        4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump
+      </p>
+    </div>
+    <div class="card">
+      <h2>🚀 Join the Ride</h2>
+      <a class="btn" href="https://x.com/CowbowDollar" target="_blank">Follow on X</a>
+      <a class="btn" href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank">Join Telegram</a>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>📜 About</h2>
-    <p>
-      A Wild West inspired memecoin built for the community.
-      Early riders get the biggest rewards.
-    </p>
+  <!-- PAINEL BTC À DIREITA (em tempo real) -->
+  <div class="sidebar">
+    <div class="card">
+      <h2>📈 BTC Preço em Tempo Real</h2>
+      <p style="margin-bottom: 15px; opacity: 0.9;">BINANCE:BTCUSDT • Atualizando ao vivo</p>
+      
+      <!-- Widget oficial TradingView -->
+      <div class="tradingview-widget-container">
+        <div id="tradingview_btc" style="height: 100%;"></div>
+      </div>
+    </div>
   </div>
-
-  <div class="card">
-    <h2>🔗 Official Links</h2>
-    <p>
-      <a href="https://x.com/CowbowDollar" target="_blank">X (Twitter)</a><br>
-      <a href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank">Telegram</a><br>
-      <a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
-    Buy on Pump.fun
-</a>
-  </div>
-
-  <div class="card">
-    <h2>📄 Contract Address</h2>
-    <p style="word-break: break-all;">
-      4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>🚀 Join the Ride</h2>
-    <a class="btn" href="https://x.com/CowbowDollar" target="_blank">Follow on X</a>
-    <a class="btn" href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank">Join Telegram</a>
-  </div>
-
 </div>
 
 <footer>
   © 2026 CowboyDollar - The Next 100x Starts Here
 </footer>
 
+<!-- SCRIPT DO TRADINGVIEW (colocado no final pra carregar depois do HTML) -->
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+<script>
+  new TradingView.widget({
+    "width": "100%",
+    "height": "520",
+    "symbol": "BINANCE:BTCUSDT",
+    "interval": "1",
+    "timezone": "Etc/UTC",
+    "theme": "dark",
+    "style": "1",
+    "locale": "pt",
+    "toolbar_bg": "#1e222d",
+    "enable_publishing": false,
+    "hide_top_toolbar": false,
+    "hide_legend": true,
+    "allow_symbol_change": true,
+    "save_image": false,
+    "container_id": "tradingview_btc"
+  });
+</script>
 </body>
 </html>
