@@ -9,26 +9,35 @@
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('./cowboy-bg.png') no-repeat center center/cover;
+      /* MAIS CLARO PRA APARECER O FUNDO */
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('./cowboy-bg.png') no-repeat center center/cover;
       color: #fff;
       text-align: center;
     }
 
     header {
-      padding: 40px 20px;
+      padding: 50px 20px 20px;
     }
 
     h1 {
       font-family: 'Rye', cursive;
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: #f5c542;
       margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255,215,0,0.7);
     }
 
     .logo {
       width: 200px;
       border-radius: 50%;
-      box-shadow: 0 0 25px rgba(255,215,0,0.7);
+      box-shadow: 0 0 30px rgba(255,215,0,0.9);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 20px rgba(255,215,0,0.6);} 
+      50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(255,215,0,1);} 
+      100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,215,0,0.6);} 
     }
 
     .container {
@@ -38,12 +47,12 @@
     }
 
     .card {
-      background: rgba(0,0,0,0.75);
+      background: rgba(0,0,0,0.55);
       border: 1px solid #f5c542;
       border-radius: 15px;
-      padding: 20px;
+      padding: 25px;
       margin: 20px 0;
-      box-shadow: 0 0 20px rgba(255,215,0,0.3);
+      box-shadow: 0 0 25px rgba(255,215,0,0.3);
     }
 
     a {
@@ -52,14 +61,10 @@
       font-weight: bold;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
     .btn {
       display: inline-block;
       margin: 10px;
-      padding: 12px 20px;
+      padding: 14px 24px;
       border-radius: 10px;
       background: #f5c542;
       color: #000;
@@ -69,32 +74,50 @@
 
     .btn:hover {
       background: #ffd700;
-      transform: scale(1.05);
+      transform: scale(1.08);
+    }
+
+    .buy-btn {
+      background: #00ff9f;
+      color: #000;
+      font-size: 1.2rem;
+      box-shadow: 0 0 20px rgba(0,255,159,0.7);
     }
 
     footer {
       margin-top: 40px;
       padding: 20px;
       font-size: 0.9rem;
-      opacity: 0.7;
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
 
 <header id="main">
-  <img src="./logo.png" alt="CowboyDollar Logo" class="logo">
+  <img src="./logo" alt="CowboyDollar Logo" class="logo">
   <h1>CowboyDollar</h1>
-  <p>The Wild West of Crypto 🤠💰</p>
+  <p>Ride the trend before it explodes 🚀</p>
+  <a class="btn buy-btn" href="https://x.com/CowbowDollar" target="_blank">🔥 Buy on Pump.fun</a>
 </header>
 
 <div class="container">
 
   <div class="card">
+    <h2>🤠 The Story</h2>
+    <p>
+      In a lawless land of crypto... where only the bold survive...
+      a new currency rises from the dust.
+      <br><br>
+      CowboyDollar isn't just a meme — it's a movement.
+    </p>
+  </div>
+
+  <div class="card">
     <h2>📜 About</h2>
     <p>
-      CowboyDollar is a meme coin inspired by the Wild West — where only the strongest survive.
-      Join the ride, build the community, and grow with the token.
+      A Wild West inspired memecoin built for the community.
+      Early riders get the biggest rewards.
     </p>
   </div>
 
@@ -115,7 +138,7 @@
   </div>
 
   <div class="card">
-    <h2>🚀 Join Now</h2>
+    <h2>🚀 Join the Ride</h2>
     <a class="btn" href="https://x.com/CowbowDollar" target="_blank">Follow on X</a>
     <a class="btn" href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank">Join Telegram</a>
   </div>
@@ -123,7 +146,7 @@
 </div>
 
 <footer>
-  © 2026 CowboyDollar - Ride the Crypto Frontier
+  © 2026 CowboyDollar - The Next 100x Starts Here
 </footer>
 
 </body>
