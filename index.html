@@ -16,28 +16,26 @@
       text-align: center;
     }
     header {
-      padding: 50px 20px 20px;
+      padding: 60px 20px 30px;
     }
     h1 {
       font-family: 'Rye', cursive;
-      font-size: 4rem;
+      font-size: 4.5rem;
       color: #f5c542;
-      margin-bottom: 10px;
-      text-shadow: 0 0 10px rgba(255,215,0,0.7);
+      margin-bottom: 15px;
+      text-shadow: 0 0 15px rgba(245,197,66,0.9);
     }
     .logo {
-      width: 200px;
+      width: 220px;
       border-radius: 50%;
-      box-shadow: 0 0 30px rgba(255,215,0,0.9);
-      animation: pulse 2s infinite;
+      box-shadow: 0 0 40px rgba(255,215,0,0.9);
+      animation: pulse 2.5s infinite;
+      margin-bottom: 20px;
     }
     @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 20px rgba(255,215,0,0.6);}
-      50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(255,215,0,1);}
-      100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,215,0,0.6);}
+      0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(255,215,0,0.7); }
+      50% { transform: scale(1.08); box-shadow: 0 0 60px rgba(255,215,0,1); }
     }
-
-    /* === ANIMAÇÃO TYPEWRITER (o destaque novo!) === */
     .saddle-up {
       background: rgba(0,0,0,0.7);
       border: 3px solid #f5c542;
@@ -46,10 +44,9 @@
       margin: 30px auto;
       max-width: 900px;
       box-shadow: 0 0 40px rgba(245,197,66,0.6);
-      overflow: hidden;
     }
     .typewriter {
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       color: #ffd700;
       text-shadow: 0 0 15px #ffd700;
       overflow: hidden;
@@ -57,8 +54,7 @@
       white-space: nowrap;
       margin: 0 auto;
       letter-spacing: 0.05em;
-      animation: typing 5s steps(60, end) forwards,
-                 blink-caret 0.75s step-end infinite;
+      animation: typing 6s steps(70, end) forwards, blink-caret 0.75s step-end infinite;
     }
     @keyframes typing {
       from { width: 0 }
@@ -68,110 +64,96 @@
       from, to { border-color: transparent }
       50% { border-color: #ffd700; }
     }
-
     .container {
       max-width: 1200px;
       margin: auto;
       padding: 20px;
       display: flex;
-      gap: 30px;
+      gap: 40px;
       align-items: flex-start;
     }
-    .main-content {
-      flex: 1;
-      min-width: 0;
-    }
-    .sidebar {
-      width: 420px;
-      flex-shrink: 0;
-    }
+    .main-content { flex: 1; min-width: 0; }
+    .sidebar { width: 450px; flex-shrink: 0; }
     .card {
-      background: rgba(0,0,0,0.55);
+      background: rgba(0,0,0,0.6);
       border: 1px solid #f5c542;
       border-radius: 15px;
       padding: 25px;
       margin: 20px 0;
-      box-shadow: 0 0 25px rgba(255,215,0,0.3);
+      box-shadow: 0 0 30px rgba(245,197,66,0.4);
     }
-    a {
-      color: #f5c542;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    h2 { color: #f5c542; text-shadow: 0 0 12px rgba(245,197,66,0.8); }
+    a { color: #f5c542; text-decoration: none; font-weight: bold; }
+    a:hover { text-decoration: underline; }
     .btn {
       display: inline-block;
-      margin: 10px;
-      padding: 14px 24px;
-      border-radius: 10px;
-      background: #f5c542;
-      color: #000;
+      margin: 15px 10px;
+      padding: 16px 32px;
+      border-radius: 12px;
       font-weight: bold;
       transition: 0.3s;
-    }
-    .btn:hover {
-      background: #ffd700;
-      transform: scale(1.08);
     }
     .buy-btn {
       background: #00ff9f;
       color: #000;
-      font-size: 1.2rem;
-      box-shadow: 0 0 20px rgba(0,255,159,0.7);
+      font-size: 1.5rem;
+      box-shadow: 0 0 25px rgba(0,255,159,0.8);
+      animation: pulse-buy 2s infinite;
+    }
+    @keyframes pulse-buy {
+      0%, 100% { box-shadow: 0 0 25px rgba(0,255,159,0.8); transform: scale(1); }
+      50% { box-shadow: 0 0 50px rgba(0,255,159,1); transform: scale(1.06); }
     }
     .tradingview-widget-container {
-      height: 520px;
-      border-radius: 10px;
+      height: 550px;
+      border-radius: 12px;
       overflow: hidden;
       border: 2px solid #f5c542;
+      box-shadow: 0 0 30px rgba(245,197,66,0.5);
     }
     footer {
-      margin-top: 40px;
+      margin-top: 50px;
       padding: 20px;
-      font-size: 0.9rem;
-      opacity: 0.8;
+      font-size: 0.95rem;
+      opacity: 0.85;
     }
-
     @media (max-width: 1024px) {
-      .container { flex-direction: column; }
+      .container { flex-direction: column; gap: 20px; }
       .sidebar { width: 100%; }
-      .saddle-up { margin: 20px 10px; }
+      .tradingview-widget-container { height: 450px; }
+      h1 { font-size: 3.5rem; }
     }
   </style>
 </head>
 <body>
 <header id="main">
+  <!-- Se você tiver uma logo, suba como cowboydollar-logo.png e descomente abaixo -->
+  <!-- <img src="./cowboydollar-logo.png" class="logo" alt="CowboyDollar Logo"> -->
   <h1>CowboyDollar</h1>
   <p>Ride the trend before it explodes 🚀</p>
+  
+  <!-- BOTÃO BUY VERDE E ANIMADO - AGORA VISÍVEL E DESTAQUE -->
   <a class="btn buy-btn" href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
     Buy on Pump.fun
   </a>
 </header>
 
-<!-- === NOVA SEÇÃO ANIMADA === -->
 <div class="saddle-up">
-  <h2 style="color:#f5c542; margin-bottom:15px;">🤠 Saddle Up, Partner!</h2>
+  <h2 style="margin-bottom: 15px;">🤠 Saddle Up, Partner!</h2>
   <p class="typewriter">
-    Tired of dog, cat, monkey &amp; frog tokens? Saddle up on this fearless cowboy's horse and ride through the Wild West of crypto in search of success! Let's go together! 🤠🐎🚀
+    Tired of dog, cat, monkey & frog tokens? Saddle up on this fearless cowboy's horse and ride through the Wild West of crypto in search of success! Let's go together! 🤠🐎🚀
   </p>
 </div>
 
 <div class="container">
-  <!-- MAIN CONTENT -->
   <div class="main-content">
     <div class="card">
       <h2>🤠 The Story</h2>
-      <p>
-        In a lawless land of crypto... where only the bold survive...<br><br>
-        a new currency rises from the dust.<br>
-        CowboyDollar isn't just a meme — it's a movement.
-      </p>
+      <p>In a lawless land of crypto... where only the bold survive...<br><br>a new currency rises from the dust.<br>CowboyDollar isn't just a meme — it's a movement.</p>
     </div>
     <div class="card">
       <h2>📜 About</h2>
-      <p>
-        A Wild West inspired memecoin built for the community.<br>
-        Early riders get the biggest rewards.
-      </p>
+      <p>A Wild West inspired memecoin built for the community.<br>Early riders get the biggest rewards.</p>
     </div>
     <div class="card">
       <h2>🔗 Official Links</h2>
@@ -183,9 +165,7 @@
     </div>
     <div class="card">
       <h2>📄 Contract Address</h2>
-      <p style="word-break: break-all;">
-        4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump
-      </p>
+      <p style="word-break: break-all;">4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump</p>
     </div>
     <div class="card">
       <h2>🚀 Join the Ride</h2>
@@ -194,7 +174,6 @@
     </div>
   </div>
 
-  <!-- BTC PANEL -->
   <div class="sidebar">
     <div class="card">
       <h2>📈 BTC Live Price</h2>
@@ -210,12 +189,11 @@
   © 2026 CowboyDollar - The Next 100x Starts Here
 </footer>
 
-<!-- TRADINGVIEW SCRIPT -->
 <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 <script>
   new TradingView.widget({
     "width": "100%",
-    "height": "520",
+    "height": "100%",
     "symbol": "BINANCE:BTCUSDT",
     "interval": "1",
     "timezone": "Etc/UTC",
