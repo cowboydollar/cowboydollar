@@ -25,44 +25,36 @@
       margin-bottom: 15px;
       text-shadow: 0 0 15px rgba(245,197,66,0.9);
     }
-    .logo {
-      width: 220px;
-      border-radius: 50%;
-      box-shadow: 0 0 40px rgba(255,215,0,0.9);
-      animation: pulse 2.5s infinite;
-      margin-bottom: 20px;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(255,215,0,0.7); }
-      50% { transform: scale(1.08); box-shadow: 0 0 60px rgba(255,215,0,1); }
-    }
     .saddle-up {
       background: rgba(0,0,0,0.7);
       border: 3px solid #f5c542;
       border-radius: 15px;
-      padding: 30px 20px;
+      padding: 30px 25px;
       margin: 30px auto;
-      max-width: 900px;
+      max-width: 95%;
       box-shadow: 0 0 40px rgba(245,197,66,0.6);
     }
-    .typewriter {
-      font-size: 1.4rem;
+    .typewriter-text {
+      font-size: 1.35rem;
       color: #ffd700;
-      text-shadow: 0 0 15px #ffd700;
-      overflow: hidden;
-      border-right: 0.15em solid #ffd700;
-      white-space: nowrap;
+      text-shadow: 0 0 12px #ffd700;
+      min-height: 120px; /* espaço pra multi-linha */
+      text-align: left;
+      max-width: 800px;
       margin: 0 auto;
-      letter-spacing: 0.05em;
-      animation: typing 6s steps(70, end) forwards, blink-caret 0.75s step-end infinite;
+      white-space: pre-wrap; /* permite quebra de linha */
+      word-wrap: break-word;
     }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.2em;
+      background: #ffd700;
+      animation: blink 0.8s step-end infinite;
+      vertical-align: middle;
     }
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #ffd700; }
+    @keyframes blink {
+      50% { opacity: 0; }
     }
     .container {
       max-width: 1200px;
@@ -122,17 +114,14 @@
       .sidebar { width: 100%; }
       .tradingview-widget-container { height: 450px; }
       h1 { font-size: 3.5rem; }
+      .typewriter-text { font-size: 1.2rem; }
     }
   </style>
 </head>
 <body>
 <header id="main">
-  <!-- Se você tiver uma logo, suba como cowboydollar-logo.png e descomente abaixo -->
-  <!-- <img src="./cowboydollar-logo.png" class="logo" alt="CowboyDollar Logo"> -->
   <h1>CowboyDollar</h1>
   <p>Ride the trend before it explodes 🚀</p>
-  
-  <!-- BOTÃO BUY VERDE E ANIMADO - AGORA VISÍVEL E DESTAQUE -->
   <a class="btn buy-btn" href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
     Buy on Pump.fun
   </a>
@@ -140,9 +129,7 @@
 
 <div class="saddle-up">
   <h2 style="margin-bottom: 15px;">🤠 Saddle Up, Partner!</h2>
-  <p class="typewriter">
-    Tired of dog, cat, monkey & frog tokens? Saddle up on this fearless cowboy's horse and ride through the Wild West of crypto in search of success! Let's go together! 🤠🐎🚀
-  </p>
+  <div class="typewriter-text" id="typed-text"></div>
 </div>
 
 <div class="container">
@@ -189,6 +176,7 @@
   © 2026 CowboyDollar - The Next 100x Starts Here
 </footer>
 
+<!-- TradingView -->
 <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 <script>
   new TradingView.widget({
@@ -208,6 +196,30 @@
     "save_image": false,
     "container_id": "tradingview_btc"
   });
+</script>
+
+<!-- Animação JS para a frase (melhor que CSS puro para longas) -->
+<script>
+  const textElement = document.getElementById('typed-text');
+  const fullText = "Tired of dog, cat, monkey & frog tokens? Saddle up on this fearless cowboy's horse and ride through the Wild West of crypto in search of success! Let's go together! 🤠🐎🚀";
+  let index = 0;
+  let typing = true;
+
+  function type() {
+    if (typing && index < fullText.length) {
+      textElement.innerHTML += fullText.charAt(index);
+      index++;
+      setTimeout(type, 50); // velocidade: menor = mais rápido
+    } else if (index >= fullText.length) {
+      // opcional: piscar cursor no final ou loop
+      textElement.innerHTML += '<span class="cursor"></span>';
+    }
+  }
+
+  // Inicia a animação ao carregar
+  window.onload = function() {
+    type();
+  };
 </script>
 </body>
 </html>
