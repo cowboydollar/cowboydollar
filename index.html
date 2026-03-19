@@ -16,9 +16,7 @@
       text-align: center;
       position: relative;
     }
-    header {
-      padding: 60px 20px 30px;
-    }
+    header { padding: 60px 20px 30px; }
     h1 {
       font-family: 'Rye', cursive;
       font-size: 4.5rem;
@@ -35,10 +33,7 @@
       margin: 15px auto;
       display: block;
     }
-    @keyframes gentle-rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
+    @keyframes gentle-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     .saddle-up {
       background: rgba(0,0,0,0.7);
       border: 3px solid #f5c542;
@@ -67,9 +62,7 @@
       animation: blink 0.8s step-end infinite;
       vertical-align: middle;
     }
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
+    @keyframes blink { 50% { opacity: 0; } }
     .fomo-badge {
       margin: 20px 0;
       font-size: 1.2rem;
@@ -123,8 +116,8 @@
       0%, 100% { box-shadow: 0 0 25px rgba(0,255,159,0.8); transform: scale(1); }
       50% { box-shadow: 0 0 50px rgba(0,255,159,1); transform: scale(1.06); }
     }
-    .tradingview-widget-container, .dex-chart {
-      height: 550px;
+    .tradingview-widget-container, .gecko-chart {
+      height: 500px;
       border-radius: 12px;
       overflow: hidden;
       border: 2px solid #f5c542;
@@ -140,19 +133,18 @@
     @media (max-width: 1024px) {
       .container { flex-direction: column; gap: 20px; }
       .sidebar { width: 100%; }
-      .tradingview-widget-container, .dex-chart { height: 400px; }
+      .tradingview-widget-container, .gecko-chart { height: 400px; }
       h1 { font-size: 3.5rem; }
       .typewriter-text { font-size: 1.2rem; min-height: 140px; }
     }
     @media (max-width: 768px) {
-      .tradingview-widget-container, .dex-chart { height: 350px !important; }
+      .tradingview-widget-container, .gecko-chart { height: 350px !important; }
       .logo-small { width: 100px; }
     }
   </style>
 </head>
 <body>
 
-<!-- Partículas douradas (poeira sutil) -->
 <div id="tsparticles" style="position: fixed; inset: 0; pointer-events: none; z-index: -2;"></div>
 
 <header id="main">
@@ -163,10 +155,9 @@
     Buy on Pump.fun
   </a>
 
-  <!-- Logo pequeno abaixo do Buy - se ficar redundante, comente/remova esta linha -->
-  <img src="./logo.png" alt="CowboyDollar Logo" class="logo-small">  <!-- Use 'logo.png' se for o nome no repo -->
+  <!-- Logo pequeno abaixo do Buy - se redundante, comente/remova -->
+  <img src="./logo.png" alt="CowboyDollar Logo" class="logo-small">
 
-  <!-- FOMO badge -->
   <div class="fomo-badge">
     <strong>Low Cap Alert:</strong> Early riders win big! Next 100x potential 🚀<br>
     Holders growing fast | Liquidity locked | Join the posse on X & Telegram
@@ -218,9 +209,13 @@
 
     <div class="card">
       <h2>📊 CowboyDollar Chart (Live)</h2>
-      <p style="margin-bottom: 10px; opacity: 0.9;">Real-time on Solana – Pump.fun pair</p>
-      <iframe src="https://dexscreener.com/solana/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump?embed=1" 
-              class="dex-chart" frameborder="0" allowfullscreen></iframe>
+      <p style="margin-bottom: 10px; opacity: 0.9;">Real-time price, volume & trades on GeckoTerminal (Solana/Pump.fun)</p>
+      <iframe 
+        src="https://www.geckoterminal.com/solana/pools/F4tvJZX1oFEhPSR7eK6u92EEXLN6vWipPY6qzavuF8i5?embed=1&info=0&swaps=0&light_chart=0" 
+        class="gecko-chart" 
+        frameborder="0" 
+        allowfullscreen>
+      </iframe>
     </div>
   </div>
 </div>
