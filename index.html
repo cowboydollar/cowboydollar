@@ -36,6 +36,39 @@
       50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(255,215,0,1);}
       100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,215,0,0.6);}
     }
+
+    /* === ANIMAÇÃO TYPEWRITER (o destaque novo!) === */
+    .saddle-up {
+      background: rgba(0,0,0,0.7);
+      border: 3px solid #f5c542;
+      border-radius: 15px;
+      padding: 30px 20px;
+      margin: 30px auto;
+      max-width: 900px;
+      box-shadow: 0 0 40px rgba(245,197,66,0.6);
+      overflow: hidden;
+    }
+    .typewriter {
+      font-size: 1.35rem;
+      color: #ffd700;
+      text-shadow: 0 0 15px #ffd700;
+      overflow: hidden;
+      border-right: 0.15em solid #ffd700;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 0.05em;
+      animation: typing 5s steps(60, end) forwards,
+                 blink-caret 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #ffd700; }
+    }
+
     .container {
       max-width: 1200px;
       margin: auto;
@@ -99,12 +132,9 @@
     }
 
     @media (max-width: 1024px) {
-      .container {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 100%;
-      }
+      .container { flex-direction: column; }
+      .sidebar { width: 100%; }
+      .saddle-up { margin: 20px 10px; }
     }
   </style>
 </head>
@@ -117,8 +147,16 @@
   </a>
 </header>
 
+<!-- === NOVA SEÇÃO ANIMADA === -->
+<div class="saddle-up">
+  <h2 style="color:#f5c542; margin-bottom:15px;">🤠 Saddle Up, Partner!</h2>
+  <p class="typewriter">
+    Tired of dog, cat, monkey &amp; frog tokens? Saddle up on this fearless cowboy's horse and ride through the Wild West of crypto in search of success! Let's go together! 🤠🐎🚀
+  </p>
+</div>
+
 <div class="container">
-  <!-- MAIN CONTENT (left side) -->
+  <!-- MAIN CONTENT -->
   <div class="main-content">
     <div class="card">
       <h2>🤠 The Story</h2>
@@ -156,13 +194,11 @@
     </div>
   </div>
 
-  <!-- BTC PANEL ON THE RIGHT (live) -->
+  <!-- BTC PANEL -->
   <div class="sidebar">
     <div class="card">
       <h2>📈 BTC Live Price</h2>
       <p style="margin-bottom: 15px; opacity: 0.9;">BINANCE:BTCUSDT • Updating live</p>
-      
-      <!-- TradingView Widget -->
       <div class="tradingview-widget-container">
         <div id="tradingview_btc" style="height: 100%;"></div>
       </div>
