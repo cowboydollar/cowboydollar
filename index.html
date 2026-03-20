@@ -73,19 +73,39 @@
       padding: 20px;
       display: flex;
       gap: 40px;
-      align-items: flex-start;
+      align-items: stretch; /* faz esquerda e direita terem altura similar */
     }
     .main-content { flex: 1; min-width: 0; }
-    .sidebar { width: 450px; flex-shrink: 0; }
+    .sidebar { width: 450px; flex-shrink: 0; display: flex; flex-direction: column; gap: 30px; }
     .card {
       background: rgba(0,0,0,0.6);
       border: 1px solid #f5c542;
       border-radius: 15px;
       padding: 25px;
-      margin: 20px 0;
+      margin: 0;
       box-shadow: 0 0 30px rgba(245,197,66,0.4);
+      flex: 1; /* cards se esticam pra alinhar alturas */
+      display: flex;
+      flex-direction: column;
     }
-    h2 { color: #f5c542; text-shadow: 0 0 12px rgba(245,197,66,0.8); }
+    .chart-wrapper {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 2px solid #f5c542;
+      box-shadow: 0 0 30px rgba(245,197,66,0.5);
+      margin-top: 15px;
+    }
+    .chart-wrapper iframe,
+    .chart-wrapper div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    h2 { color: #f5c542; text-shadow: 0 0 12px rgba(245,197,66,0.8); margin-bottom: 10px; }
     a { color: #f5c542; text-decoration: none; font-weight: bold; }
     a:hover { text-decoration: underline; }
     .btn {
@@ -107,14 +127,6 @@
       0%, 100% { box-shadow: 0 0 25px rgba(0,255,159,0.8); transform: scale(1); }
       50% { box-shadow: 0 0 50px rgba(0,255,159,1); transform: scale(1.06); }
     }
-    .tradingview-widget-container, .gecko-chart {
-      height: 500px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 2px solid #f5c542;
-      box-shadow: 0 0 30px rgba(245,197,66,0.5);
-      margin-top: 15px;
-    }
     footer {
       margin-top: 50px;
       padding: 20px;
@@ -122,7 +134,7 @@
       opacity: 0.85;
     }
 
-    /* RESPONSIVIDADE MOBILE - APLICADA SOMENTE EM TELAS MENORES */
+    /* RESPONSIVIDADE MOBILE - só aplica em telas menores */
     @media (max-width: 1024px) {
       .container {
         flex-direction: column;
@@ -130,8 +142,7 @@
         padding: 15px;
       }
       .sidebar { width: 100%; }
-      .tradingview-widget-container,
-      .gecko-chart { height: 420px; }
+      .chart-wrapper { height: 420px; }
       h1 { font-size: 3.8rem; }
       .typewriter-text { font-size: 1.25rem; min-height: 160px; line-height: 1.6; }
       .fomo-badge { font-size: 1.1rem; padding: 12px; margin: 15px 0; }
@@ -142,24 +153,13 @@
       header { padding: 40px 15px 25px; }
       h1 { font-size: 3rem; }
       p, .card p { font-size: 1rem; line-height: 1.6; }
-      .tradingview-widget-container,
-      .gecko-chart { height: 300px !important; } /* bem menor para scroll confortável */
+      .chart-wrapper { height: 320px !important; }
       .card { padding: 18px; margin: 12px 0; }
       .saddle-up { padding: 20px 15px; margin: 20px 10px; }
       .typewriter-text { font-size: 1.1rem; min-height: 180px; }
       .fomo-badge { font-size: 1rem; padding: 12px; margin: 15px 10px; }
       .btn { padding: 12px 24px; font-size: 1.1rem; }
-      #tsparticles { opacity: 0.5; } /* partículas mais leves no celular */
-      .gecko-chart, .tradingview-widget-container { overflow: hidden; } /* evita cortes feios em iframes */
-    }
-
-    /* Força iframes a se adaptarem */
-    .gecko-chart,
-    .tradingview-widget-container iframe,
-    .tradingview-widget-container div {
-      width: 100% !important;
-      height: 100% !important;
-      border: none;
+      #tsparticles { opacity: 0.5; }
     }
   </style>
 </head>
@@ -218,19 +218,20 @@
   <div class="sidebar">
     <div class="card">
       <h2>📊 CowboyDollar Chart (Live)</h2>
-      <p style="margin-bottom: 10px; opacity: 0.9;">Real-time price, volume & trades on GeckoTerminal (Solana/Pump.fun)</p>
-      <iframe 
-        src="https://www.geckoterminal.com/solana/pools/F4tvJZX1oFEhPSR7eK6u92EEXLN6vWipPY6qzavuF8i5?embed=1&info=0&swaps=0&light_chart=0" 
-        class="gecko-chart" 
-        frameborder="0" 
-        allowfullscreen>
-      </iframe>
+      <p style="margin-bottom: 10px; opacity: 0.9;">Real-time price, volume & trades on GeckoTerminal</p>
+      <div class="chart-wrapper">
+        <iframe 
+          src="https://www.geckoterminal.com/solana/pools/F4tvJZX1oFEhPSR7eK6u92EEXLN6vWipPY6qzavuF8i5?embed=1&info=0&swaps=0&light_chart=0" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
 
     <div class="card">
       <h2>📈 BTC Live Price</h2>
       <p style="margin-bottom: 15px; opacity: 0.9;">BINANCE:BTCUSDT • Updating live</p>
-      <div class="tradingview-widget-container">
+      <div class="chart-wrapper tradingview-widget-container">
         <div id="tradingview_btc" style="height: 100%;"></div>
       </div>
     </div>
