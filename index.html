@@ -120,15 +120,84 @@
       font-size: 0.95rem;
       opacity: 0.85;
     }
+
+    /* === RESPONSIVIDADE MOBILE - APLICADA APENAS EM TELAS MENORES === */
     @media (max-width: 1024px) {
-      .container { flex-direction: column; gap: 20px; }
-      .sidebar { width: 100%; }
-      .tradingview-widget-container, .gecko-chart { height: 400px; }
-      h1 { font-size: 3.5rem; }
-      .typewriter-text { font-size: 1.2rem; min-height: 140px; }
+      .container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 15px;
+      }
+      .sidebar {
+        width: 100%;
+      }
+      .tradingview-widget-container,
+      .gecko-chart {
+        height: 420px;
+      }
+      h1 {
+        font-size: 3.8rem;
+      }
+      .typewriter-text {
+        font-size: 1.25rem;
+        min-height: 150px;
+      }
+      .fomo-badge {
+        font-size: 1.1rem;
+        padding: 12px;
+      }
+      .btn.buy-btn {
+        font-size: 1.4rem;
+        padding: 14px 28px;
+      }
     }
+
     @media (max-width: 768px) {
-      .tradingview-widget-container, .gecko-chart { height: 350px !important; }
+      header {
+        padding: 40px 15px 20px;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .tradingview-widget-container,
+      .gecko-chart {
+        height: 340px !important;
+      }
+      .card {
+        padding: 18px;
+        margin: 15px 0;
+      }
+      .saddle-up {
+        padding: 20px 15px;
+        margin: 20px 10px;
+      }
+      .typewriter-text {
+        font-size: 1.15rem;
+        line-height: 1.5;
+      }
+      .fomo-badge {
+        font-size: 1rem;
+        margin: 15px 5px;
+      }
+      .btn {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+      }
+      /* Reduz partículas no mobile para melhor performance */
+      #tsparticles {
+        opacity: 0.7;
+      }
+    }
+
+    /* Garante que iframes se adaptem corretamente */
+    .gecko-chart,
+    .tradingview-widget-container iframe,
+    .tradingview-widget-container div {
+      width: 100% !important;
+      height: 100% !important;
     }
   </style>
 </head>
@@ -185,7 +254,6 @@
   </div>
 
   <div class="sidebar">
-    <!-- Primeiro: CowboyDollar Chart (agora no topo) -->
     <div class="card">
       <h2>📊 CowboyDollar Chart (Live)</h2>
       <p style="margin-bottom: 10px; opacity: 0.9;">Real-time price, volume & trades on GeckoTerminal (Solana/Pump.fun)</p>
@@ -197,7 +265,6 @@
       </iframe>
     </div>
 
-    <!-- Depois: BTC Live Price -->
     <div class="card">
       <h2>📈 BTC Live Price</h2>
       <p style="margin-bottom: 15px; opacity: 0.9;">BINANCE:BTCUSDT • Updating live</p>
