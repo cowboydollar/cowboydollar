@@ -12,7 +12,7 @@
       background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('./cowboy-bg.png');
       background-size: cover;
       background-attachment: fixed;
-      background-position: center 20%; /* Ajuste para centralizar melhor o rosto do cowboy */
+      background-position: center;
       color: #fff;
       text-align: center;
       position: relative;
@@ -157,27 +157,191 @@
       opacity: 0.85;
     }
 
-    /* RESPONSIVIDADE MOBILE */
-    @media (max-width: 1024px) {
-      .container { flex-direction: column; gap: 35px; padding: 15px; }
-      .sidebar { width: 100%; }
-      .chart-wrapper { height: 420px; }
-      h1 { font-size: 3.8rem; }
-      .typewriter-text { font-size: 1.25rem; min-height: 160px; line-height: 1.6; }
-      .fomo-badge { font-size: 1.1rem; padding: 12px; margin: 15px 0; }
-      .btn.buy-btn { font-size: 1.4rem; padding: 14px 28px; width: 80%; margin: 20px auto; display: block; }
-    }
+    /* ============================================ */
+    /* AJUSTES EXCLUSIVOS PARA MOBILE */
+    /* ============================================ */
     @media (max-width: 768px) {
-      header { padding: 40px 15px 25px; }
-      h1 { font-size: 3rem; }
-      p, .card p { font-size: 1rem; line-height: 1.6; }
-      .chart-wrapper { height: 320px !important; }
-      .card { padding: 18px; margin: 12px 0; }
-      .saddle-up { padding: 20px 15px; margin: 20px 10px; }
-      .typewriter-text { font-size: 1.1rem; min-height: 180px; }
-      .fomo-badge { font-size: 1rem; padding: 12px; margin: 15px 10px; }
-      .btn { padding: 12px 24px; font-size: 1.1rem; }
-      #tsparticles { opacity: 0.5; }
+      /* Header mais compacto */
+      header { 
+        padding: 30px 15px 20px;
+      }
+      
+      /* Título menor e mais centralizado */
+      h1 { 
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+      }
+      
+      /* Slogan com tamanho adequado */
+      header p {
+        font-size: 1rem;
+        margin: 10px 0;
+      }
+      
+      /* Botão de compra ocupa toda largura e fica mais fácil de clicar */
+      .buy-btn {
+        font-size: 1.3rem;
+        padding: 14px 20px;
+        width: 85%;
+        margin: 15px auto;
+        display: block;
+        box-sizing: border-box;
+      }
+      
+      /* Badge FOMO com padding adequado e texto menor */
+      .fomo-badge {
+        font-size: 0.85rem;
+        padding: 12px;
+        margin: 15px 10px;
+        width: auto;
+        line-height: 1.4;
+      }
+      
+      /* Container principal sem padding lateral excessivo */
+      .container {
+        padding: 15px 12px;
+        gap: 20px;
+      }
+      
+      /* CARDS MAIS TRANSPARENTES NO MOBILE - SOLUÇÃO PARA ENXERGAR O FUNDO */
+      .card {
+        padding: 18px 15px;
+        background: rgba(0,0,0,0.35); /* Mais transparente que o desktop (0.35 vs 0.5) */
+        backdrop-filter: blur(2px);
+        transition: all 0.3s ease;
+      }
+      
+      /* Ao passar o dedo no celular, fica um pouco mais opaco para leitura */
+      .card:active {
+        background: rgba(0,0,0,0.55);
+        backdrop-filter: blur(3px);
+      }
+      
+      /* Saddle Up também mais transparente no mobile */
+      .saddle-up {
+        background: rgba(0,0,0,0.4);
+        padding: 20px 15px;
+        margin: 20px 12px;
+      }
+      
+      /* Títulos dos cards menores */
+      .card h2 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+      }
+      
+      /* Texto dos cards mais compacto */
+      .card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 8px 0;
+      }
+      
+      /* Área de texto datilografado */
+      .typewriter-text {
+        font-size: 1rem;
+        min-height: auto;
+        line-height: 1.5;
+        padding: 0 5px;
+      }
+      
+      .saddle-up h2 {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+      }
+      
+      /* Gráficos com altura fixa e sem quebra */
+      .chart-wrapper {
+        height: 280px !important;
+        margin-top: 10px;
+      }
+      
+      /* Sidebar ocupa 100% e reduz gap */
+      .sidebar {
+        width: 100%;
+        gap: 20px;
+      }
+      
+      /* Links e botões secundários */
+      .btn:not(.buy-btn) {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        margin: 10px 5px;
+      }
+      
+      /* Footer com padding reduzido */
+      footer {
+        margin-top: 30px;
+        padding: 15px;
+        font-size: 0.8rem;
+      }
+      
+      /* Partículas mais sutis no celular para melhor performance e não atrapalhar a visão do fundo */
+      #tsparticles {
+        opacity: 0.3;
+      }
+      
+      /* Ajuste do fundo no celular para centralizar melhor o cowboy */
+      body {
+        background-position: center 30%;
+        background-attachment: scroll; /* Melhor performance no mobile */
+      }
+    }
+    
+    /* Ajustes para telas muito pequenas (menos de 480px) */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .buy-btn {
+        font-size: 1.1rem;
+        padding: 12px 16px;
+        width: 90%;
+      }
+      
+      /* Cards ainda mais transparentes em telas muito pequenas */
+      .card {
+        padding: 15px 12px;
+        background: rgba(0,0,0,0.3); /* Ainda mais leve para telas pequenas */
+      }
+      
+      .saddle-up {
+        background: rgba(0,0,0,0.35);
+      }
+      
+      .card h2 {
+        font-size: 1.2rem;
+      }
+      
+      .chart-wrapper {
+        height: 240px !important;
+      }
+      
+      .fomo-badge {
+        font-size: 0.75rem;
+        padding: 10px;
+      }
+    }
+    
+    /* Tablet (entre 769px e 1024px) - mantém próximo do desktop */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .container {
+        gap: 25px;
+        padding: 15px;
+      }
+      
+      .sidebar {
+        width: 380px;
+      }
+      
+      h1 {
+        font-size: 4rem;
+      }
+      
+      .chart-wrapper {
+        height: 380px;
+      }
     }
   </style>
 </head>
