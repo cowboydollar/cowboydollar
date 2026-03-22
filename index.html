@@ -12,24 +12,65 @@
       background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('./cowboy-bg.png');
       background-size: cover;
       background-attachment: fixed;
+      background-position: center;
       color: #fff;
       text-align: center;
       position: relative;
     }
-    header { padding: 60px 20px 30px; }
+    
+    /* Hero section com o logo de fundo */
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 80px 20px 40px;
+    }
+    
     h1 {
       font-family: 'Rye', cursive;
-      font-size: 4.5rem;
+      font-size: 5rem;
       color: #f5c542;
-      margin-bottom: 10px;
-      text-shadow: 0 0 25px rgba(245,197,66,0.9), 0 0 15px rgba(245,197,66,0.6); /* Brilho aumentado */
-      animation: glowPulse 3s ease-in-out infinite; /* Animação sutil de pulsação */
+      margin-bottom: 20px;
+      text-shadow: 0 0 25px rgba(245,197,66,0.9), 0 0 15px rgba(245,197,66,0.6);
+      animation: glowPulse 3s ease-in-out infinite;
+      position: relative;
+      z-index: 2;
     }
-    /* Animação suave de pulsação para o título */
+    
+    /* Espaço para o logo - será a própria imagem de fundo */
+    .logo-area {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      min-height: 300px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Seção de conteúdo após o logo */
+    .content-after-logo {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+      padding: 40px 20px 60px;
+      margin-top: -50px;
+      position: relative;
+      z-index: 2;
+    }
+    
     @keyframes glowPulse {
       0%, 100% { text-shadow: 0 0 25px rgba(245,197,66,0.9), 0 0 15px rgba(245,197,66,0.6); }
       50% { text-shadow: 0 0 35px rgba(245,197,66,1), 0 0 20px rgba(245,197,66,0.8); }
     }
+    
+    .slogan {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    
     .saddle-up {
       background: rgba(0,0,0,0.5);
       border: 3px solid #f5c542;
@@ -40,6 +81,7 @@
       box-shadow: 0 0 40px rgba(245,197,66,0.6);
       backdrop-filter: blur(2px);
     }
+    
     .typewriter-text {
       font-size: 1.35rem;
       color: #ffd700;
@@ -52,6 +94,7 @@
       word-wrap: break-word;
       line-height: 1.5;
     }
+    
     .cursor {
       display: inline-block;
       width: 10px;
@@ -60,9 +103,11 @@
       animation: blink 0.8s step-end infinite;
       vertical-align: middle;
     }
+    
     @keyframes blink { 50% { opacity: 0; } }
+    
     .fomo-badge {
-      margin: 20px 0;
+      margin: 20px auto;
       font-size: 1.2rem;
       color: #00ff9f;
       text-shadow: 0 0 10px #00ff9f;
@@ -71,9 +116,8 @@
       border-radius: 10px;
       border: 1px solid #00ff9f;
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
     }
+    
     .container {
       max-width: 1200px;
       margin: auto;
@@ -82,8 +126,10 @@
       gap: 40px;
       align-items: stretch;
     }
+    
     .main-content { flex: 1; min-width: 0; }
     .sidebar { width: 450px; flex-shrink: 0; display: flex; flex-direction: column; gap: 30px; }
+    
     .card {
       background: rgba(0,0,0,0.5);
       border: 1px solid #f5c542;
@@ -97,10 +143,12 @@
       backdrop-filter: blur(2px);
       transition: all 0.3s ease;
     }
+    
     .card:hover {
       background: rgba(0,0,0,0.65);
       backdrop-filter: blur(4px);
     }
+    
     .chart-wrapper {
       flex: 1;
       position: relative;
@@ -110,6 +158,7 @@
       box-shadow: 0 0 30px rgba(245,197,66,0.5);
       margin-top: 15px;
     }
+    
     .chart-wrapper iframe,
     .chart-wrapper div {
       position: absolute;
@@ -118,9 +167,11 @@
       width: 100%;
       height: 100%;
     }
+    
     h2 { color: #f5c542; text-shadow: 0 0 12px rgba(245,197,66,0.8); margin-bottom: 10px; }
     a { color: #f5c542; text-decoration: none; font-weight: bold; }
     a:hover { text-decoration: underline; }
+    
     .btn {
       display: inline-block;
       margin: 15px 10px;
@@ -129,13 +180,15 @@
       font-weight: bold;
       transition: 0.3s;
     }
+    
     .buy-btn {
       background: #00ff9f;
       color: #000;
       font-size: 1.5rem;
-      box-shadow: 0 0 35px rgba(0,255,159,1), 0 0 15px rgba(0,255,159,0.6); /* Brilho aumentado */
+      box-shadow: 0 0 35px rgba(0,255,159,1), 0 0 15px rgba(0,255,159,0.6);
       animation: pulse-buy 2s infinite;
     }
+    
     @keyframes pulse-buy {
       0%, 100% { 
         box-shadow: 0 0 35px rgba(0,255,159,1), 0 0 15px rgba(0,255,159,0.6); 
@@ -146,32 +199,37 @@
         transform: scale(1.06); 
       }
     }
+    
     footer {
       margin-top: 50px;
       padding: 20px;
       font-size: 0.95rem;
       opacity: 0.85;
     }
-
+    
     /* RESPONSIVIDADE MOBILE */
     @media (max-width: 1024px) {
       .container { flex-direction: column; gap: 35px; padding: 15px; }
       .sidebar { width: 100%; }
       .chart-wrapper { height: 420px; }
-      h1 { font-size: 3.8rem; }
+      h1 { font-size: 3.5rem; }
+      .slogan { font-size: 1.2rem; }
       .typewriter-text { font-size: 1.25rem; min-height: 160px; line-height: 1.6; }
-      .fomo-badge { font-size: 1.1rem; padding: 12px; margin: 15px 0; }
+      .fomo-badge { font-size: 1.1rem; padding: 12px; margin: 15px auto; }
       .btn.buy-btn { font-size: 1.4rem; padding: 14px 28px; width: 80%; margin: 20px auto; display: block; }
     }
+    
     @media (max-width: 768px) {
-      header { padding: 40px 15px 25px; }
-      h1 { font-size: 3rem; }
+      .hero { min-height: 60vh; padding: 40px 15px 20px; }
+      h1 { font-size: 2.5rem; }
+      .logo-area { min-height: 200px; }
+      .slogan { font-size: 1rem; }
       p, .card p { font-size: 1rem; line-height: 1.6; }
       .chart-wrapper { height: 320px !important; }
       .card { padding: 18px; margin: 12px 0; }
       .saddle-up { padding: 20px 15px; margin: 20px 10px; }
       .typewriter-text { font-size: 1.1rem; min-height: 180px; }
-      .fomo-badge { font-size: 1rem; padding: 12px; margin: 15px 10px; }
+      .fomo-badge { font-size: 0.9rem; padding: 12px; margin: 15px 10px; }
       .btn { padding: 12px 24px; font-size: 1.1rem; }
       #tsparticles { opacity: 0.5; }
     }
@@ -181,9 +239,15 @@
 
 <div id="tsparticles" style="position: fixed; inset: 0; pointer-events: none; z-index: -2;"></div>
 
-<header id="main">
+<!-- Hero section: Título acima do logo -->
+<section class="hero">
   <h1>CowboyDollar</h1>
-  <p>Ride the trend before it explodes 🚀</p>
+  <div class="logo-area"></div>
+</section>
+
+<!-- Conteúdo que fica abaixo do logo -->
+<section class="content-after-logo">
+  <div class="slogan">Ride the trend before it explodes 🚀</div>
   
   <a class="btn buy-btn" href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
     Buy on Pump.fun
@@ -193,7 +257,7 @@
     <strong>Low Cap Alert:</strong> Early riders win big! Next 100x potential 🚀<br>
     Holders growing fast | Liquidity locked | Join the posse on X & Telegram
   </div>
-</header>
+</section>
 
 <div class="saddle-up">
   <h2 style="margin-bottom: 15px;">🤠 Saddle Up, Partner!</h2>
@@ -233,7 +297,6 @@
       </a>
     </div>
 
-    <!-- === AUDIT CARD - AGORA EM INGLÊS === -->
     <div class="card">
       <h2>🛡️ Security Audit (TokenSniffer)</h2>
       <p>
