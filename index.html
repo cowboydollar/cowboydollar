@@ -9,7 +9,8 @@
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('./cowboy-bg.png');
+      /* BRILHO DO SOL AUMENTADO - overlay mais claro */
+      background: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.60)), url('./cowboy-bg.png');
       background-size: cover;
       background-attachment: fixed;
       color: #fff;
@@ -87,6 +88,8 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      /* ALINHAMENTO MELHORADO */
+      min-height: 520px;
     }
     .chart-wrapper {
       flex: 1;
@@ -127,6 +130,12 @@
       0%, 100% { box-shadow: 0 0 25px rgba(0,255,159,0.8); transform: scale(1); }
       50% { box-shadow: 0 0 50px rgba(0,255,159,1); transform: scale(1.06); }
     }
+    /* BOTÃO AUDITORIA COM GLOW MAIS FORTE */
+    .audit-btn {
+      background: #ffd700;
+      color: #000;
+      box-shadow: 0 0 25px rgba(255,215,0,0.9), 0 0 40px rgba(255,215,0,0.6);
+    }
     footer {
       margin-top: 50px;
       padding: 20px;
@@ -143,13 +152,14 @@
       .typewriter-text { font-size: 1.25rem; min-height: 160px; line-height: 1.6; }
       .fomo-badge { font-size: 1.1rem; padding: 12px; margin: 15px 0; }
       .btn.buy-btn { font-size: 1.4rem; padding: 14px 28px; width: 80%; margin: 20px auto; display: block; }
+      .card { min-height: 460px; }
     }
     @media (max-width: 768px) {
       header { padding: 40px 15px 25px; }
       h1 { font-size: 3rem; }
       p, .card p { font-size: 1rem; line-height: 1.6; }
       .chart-wrapper { height: 320px !important; }
-      .card { padding: 18px; margin: 12px 0; }
+      .card { padding: 18px; margin: 12px 0; min-height: auto; }
       .saddle-up { padding: 20px 15px; margin: 20px 10px; }
       .typewriter-text { font-size: 1.1rem; min-height: 180px; }
       .fomo-badge { font-size: 1rem; padding: 12px; margin: 15px 10px; }
@@ -214,7 +224,6 @@
       </a>
     </div>
 
-    <!-- === AUDIT CARD - AGORA EM INGLÊS === -->
     <div class="card">
       <h2>🛡️ Security Audit (TokenSniffer)</h2>
       <p>
@@ -222,7 +231,7 @@
         This tool checks for common risks such as honeypot, rug pull potential, holder distribution, liquidity lock, and more.<br><br>
         <strong>This is NOT a deep professional audit (like Certik)</strong>. Use it as part of your own research (DYOR). Always verify on-chain!
       </p>
-      <a class="btn" href="https://tokensniffer.com/token/solana/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank" style="background:#ffd700; color:#000;">
+      <a class="btn audit-btn" href="https://tokensniffer.com/token/solana/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
         View TokenSniffer Audit 🛡️
       </a>
     </div>
