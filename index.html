@@ -25,13 +25,14 @@
       text-shadow: 0 0 15px rgba(245,197,66,0.9);
     }
     .saddle-up {
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.5); /* Mais transparente */
       border: 3px solid #f5c542;
       border-radius: 15px;
       padding: 30px 25px;
       margin: 30px auto;
       max-width: 95%;
       box-shadow: 0 0 40px rgba(245,197,66,0.6);
+      backdrop-filter: blur(2px); /* Pequeno desfoque para melhorar legibilidade */
     }
     .typewriter-text {
       font-size: 1.35rem;
@@ -78,7 +79,7 @@
     .main-content { flex: 1; min-width: 0; }
     .sidebar { width: 450px; flex-shrink: 0; display: flex; flex-direction: column; gap: 30px; }
     .card {
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.5); /* Mais transparente */
       border: 1px solid #f5c542;
       border-radius: 15px;
       padding: 25px;
@@ -87,6 +88,13 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      backdrop-filter: blur(2px); /* Pequeno desfoque para suavizar e melhorar contraste do texto */
+      transition: all 0.3s ease;
+    }
+    /* Efeito opcional: ao passar o mouse, o card fica um pouco mais opaco para leitura */
+    .card:hover {
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
     }
     .chart-wrapper {
       flex: 1;
