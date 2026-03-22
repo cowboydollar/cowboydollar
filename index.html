@@ -2,46 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CowboyDollar</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rye&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      /* Fundo com fallback e controle melhor da imagem */
-      background-color: #0a0a0a;
-      background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('./cowboy-bg.png');
-      background-repeat: no-repeat;
-      background-position: center top;
-      background-size: cover; /* padrão desktop */
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('./cowboy-bg.png');
+      background-size: cover;
       background-attachment: fixed;
       color: #fff;
       text-align: center;
       position: relative;
-      min-height: 100vh;
     }
-    
-    header { 
-      padding: 60px 20px 30px;
-      position: relative;
-      z-index: 2;
-    }
-    
+    header { padding: 60px 20px 30px; }
     h1 {
       font-family: 'Rye', cursive;
       font-size: 4.5rem;
       color: #f5c542;
       margin-bottom: 10px;
-      text-shadow: 0 0 25px rgba(245,197,66,0.9), 0 0 15px rgba(245,197,66,0.6);
-      animation: glowPulse 3s ease-in-out infinite;
+      text-shadow: 0 0 25px rgba(245,197,66,0.9), 0 0 15px rgba(245,197,66,0.6); /* Brilho aumentado */
+      animation: glowPulse 3s ease-in-out infinite; /* Animação sutil de pulsação */
     }
-    
+    /* Animação suave de pulsação para o título */
     @keyframes glowPulse {
       0%, 100% { text-shadow: 0 0 25px rgba(245,197,66,0.9), 0 0 15px rgba(245,197,66,0.6); }
       50% { text-shadow: 0 0 35px rgba(245,197,66,1), 0 0 20px rgba(245,197,66,0.8); }
     }
-    
     .saddle-up {
       background: rgba(0,0,0,0.5);
       border: 3px solid #f5c542;
@@ -52,7 +40,6 @@
       box-shadow: 0 0 40px rgba(245,197,66,0.6);
       backdrop-filter: blur(2px);
     }
-    
     .typewriter-text {
       font-size: 1.35rem;
       color: #ffd700;
@@ -65,7 +52,6 @@
       word-wrap: break-word;
       line-height: 1.5;
     }
-    
     .cursor {
       display: inline-block;
       width: 10px;
@@ -74,9 +60,7 @@
       animation: blink 0.8s step-end infinite;
       vertical-align: middle;
     }
-    
     @keyframes blink { 50% { opacity: 0; } }
-    
     .fomo-badge {
       margin: 20px 0;
       font-size: 1.2rem;
@@ -90,7 +74,6 @@
       margin-left: auto;
       margin-right: auto;
     }
-    
     .container {
       max-width: 1200px;
       margin: auto;
@@ -99,10 +82,8 @@
       gap: 40px;
       align-items: stretch;
     }
-    
     .main-content { flex: 1; min-width: 0; }
     .sidebar { width: 450px; flex-shrink: 0; display: flex; flex-direction: column; gap: 30px; }
-    
     .card {
       background: rgba(0,0,0,0.5);
       border: 1px solid #f5c542;
@@ -116,12 +97,10 @@
       backdrop-filter: blur(2px);
       transition: all 0.3s ease;
     }
-    
     .card:hover {
       background: rgba(0,0,0,0.65);
       backdrop-filter: blur(4px);
     }
-    
     .chart-wrapper {
       flex: 1;
       position: relative;
@@ -131,7 +110,6 @@
       box-shadow: 0 0 30px rgba(245,197,66,0.5);
       margin-top: 15px;
     }
-    
     .chart-wrapper iframe,
     .chart-wrapper div {
       position: absolute;
@@ -140,11 +118,9 @@
       width: 100%;
       height: 100%;
     }
-    
     h2 { color: #f5c542; text-shadow: 0 0 12px rgba(245,197,66,0.8); margin-bottom: 10px; }
     a { color: #f5c542; text-decoration: none; font-weight: bold; }
     a:hover { text-decoration: underline; }
-    
     .btn {
       display: inline-block;
       margin: 15px 10px;
@@ -153,15 +129,13 @@
       font-weight: bold;
       transition: 0.3s;
     }
-    
     .buy-btn {
       background: #00ff9f;
       color: #000;
       font-size: 1.5rem;
-      box-shadow: 0 0 35px rgba(0,255,159,1), 0 0 15px rgba(0,255,159,0.6);
+      box-shadow: 0 0 35px rgba(0,255,159,1), 0 0 15px rgba(0,255,159,0.6); /* Brilho aumentado */
       animation: pulse-buy 2s infinite;
     }
-    
     @keyframes pulse-buy {
       0%, 100% { 
         box-shadow: 0 0 35px rgba(0,255,159,1), 0 0 15px rgba(0,255,159,0.6); 
@@ -172,169 +146,34 @@
         transform: scale(1.06); 
       }
     }
-    
     footer {
       margin-top: 50px;
       padding: 20px;
       font-size: 0.95rem;
       opacity: 0.85;
     }
-    
-    /* ============================================ */
-    /* AJUSTES PARA MOBILE - GARANTINDO LOGO VISÍVEL */
-    /* ============================================ */
+
+    /* RESPONSIVIDADE MOBILE */
+    @media (max-width: 1024px) {
+      .container { flex-direction: column; gap: 35px; padding: 15px; }
+      .sidebar { width: 100%; }
+      .chart-wrapper { height: 420px; }
+      h1 { font-size: 3.8rem; }
+      .typewriter-text { font-size: 1.25rem; min-height: 160px; line-height: 1.6; }
+      .fomo-badge { font-size: 1.1rem; padding: 12px; margin: 15px 0; }
+      .btn.buy-btn { font-size: 1.4rem; padding: 14px 28px; width: 80%; margin: 20px auto; display: block; }
+    }
     @media (max-width: 768px) {
-      body {
-        /* No mobile, usa contain para mostrar a imagem inteira sem cortes */
-        background-size: contain;
-        background-position: center 30px;
-        background-attachment: scroll;
-      }
-      
-      header { 
-        padding: 20px 15px 15px;
-      }
-      
-      h1 { 
-        font-size: 2.8rem;
-        margin-bottom: 10px;
-      }
-      
-      header p {
-        font-size: 1rem;
-        margin: 8px 0;
-      }
-      
-      .buy-btn {
-        font-size: 1.3rem;
-        padding: 14px 20px;
-        width: 85%;
-        margin: 15px auto;
-        display: block;
-        box-sizing: border-box;
-      }
-      
-      .fomo-badge {
-        font-size: 0.85rem;
-        padding: 12px;
-        margin: 15px 10px;
-        width: auto;
-        line-height: 1.4;
-      }
-      
-      .container {
-        padding: 15px 12px;
-        gap: 20px;
-      }
-      
-      .card {
-        padding: 18px 15px;
-        background: rgba(0,0,0,0.7); /* um pouco mais opaco para destacar o texto sobre a imagem */
-        backdrop-filter: blur(3px);
-      }
-      
-      .card h2 {
-        font-size: 1.4rem;
-        margin-bottom: 12px;
-      }
-      
-      .card p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-        margin: 8px 0;
-      }
-      
-      .typewriter-text {
-        font-size: 1rem;
-        min-height: auto;
-        line-height: 1.5;
-        padding: 0 5px;
-      }
-      
-      .saddle-up {
-        padding: 20px 15px;
-        margin: 20px 12px;
-      }
-      
-      .saddle-up h2 {
-        font-size: 1.6rem;
-        margin-bottom: 12px;
-      }
-      
-      .chart-wrapper {
-        height: 280px !important;
-        margin-top: 10px;
-      }
-      
-      .sidebar {
-        width: 100%;
-        gap: 20px;
-      }
-      
-      .btn:not(.buy-btn) {
-        padding: 12px 20px;
-        font-size: 0.9rem;
-        margin: 10px 5px;
-      }
-      
-      footer {
-        margin-top: 30px;
-        padding: 15px;
-        font-size: 0.8rem;
-      }
-      
-      #tsparticles {
-        opacity: 0.4;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      
-      .buy-btn {
-        font-size: 1.1rem;
-        padding: 12px 16px;
-        width: 90%;
-      }
-      
-      .card {
-        padding: 15px 12px;
-      }
-      
-      .card h2 {
-        font-size: 1.2rem;
-      }
-      
-      .chart-wrapper {
-        height: 240px !important;
-      }
-      
-      .fomo-badge {
-        font-size: 0.75rem;
-        padding: 10px;
-      }
-    }
-    
-    /* Tablet */
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .container {
-        gap: 25px;
-        padding: 15px;
-      }
-      
-      .sidebar {
-        width: 380px;
-      }
-      
-      h1 {
-        font-size: 4rem;
-      }
-      
-      .chart-wrapper {
-        height: 380px;
-      }
+      header { padding: 40px 15px 25px; }
+      h1 { font-size: 3rem; }
+      p, .card p { font-size: 1rem; line-height: 1.6; }
+      .chart-wrapper { height: 320px !important; }
+      .card { padding: 18px; margin: 12px 0; }
+      .saddle-up { padding: 20px 15px; margin: 20px 10px; }
+      .typewriter-text { font-size: 1.1rem; min-height: 180px; }
+      .fomo-badge { font-size: 1rem; padding: 12px; margin: 15px 10px; }
+      .btn { padding: 12px 24px; font-size: 1.1rem; }
+      #tsparticles { opacity: 0.5; }
     }
   </style>
 </head>
@@ -394,6 +233,7 @@
       </a>
     </div>
 
+    <!-- === AUDIT CARD - AGORA EM INGLÊS === -->
     <div class="card">
       <h2>🛡️ Security Audit (TokenSniffer)</h2>
       <p>
