@@ -12,7 +12,7 @@
       background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('./cowboy-bg.png');
       background-size: cover;
       background-attachment: fixed;
-      background-position: center;
+      background-position: center; /* Posição padrão centralizada para desktop */
       color: #fff;
       text-align: center;
       position: relative;
@@ -161,24 +161,30 @@
     /* AJUSTES EXCLUSIVOS PARA MOBILE */
     /* ============================================ */
     @media (max-width: 768px) {
+      /* Ajuste do fundo APENAS no mobile - sem cortar o logo */
+      body {
+        background-position: center 20%; /* Move levemente para baixo no celular para não cortar o rosto */
+        background-attachment: scroll;
+      }
+      
       /* Header mais compacto */
       header { 
         padding: 30px 15px 20px;
       }
       
-      /* Título menor e mais centralizado */
+      /* Título menor */
       h1 { 
         font-size: 2.8rem;
         margin-bottom: 15px;
       }
       
-      /* Slogan com tamanho adequado */
+      /* Slogan */
       header p {
         font-size: 1rem;
         margin: 10px 0;
       }
       
-      /* Botão de compra ocupa toda largura e fica mais fácil de clicar */
+      /* Botão de compra ocupa toda largura */
       .buy-btn {
         font-size: 1.3rem;
         padding: 14px 20px;
@@ -188,7 +194,7 @@
         box-sizing: border-box;
       }
       
-      /* Badge FOMO com padding adequado e texto menor */
+      /* Badge FOMO */
       .fomo-badge {
         font-size: 0.85rem;
         padding: 12px;
@@ -197,40 +203,24 @@
         line-height: 1.4;
       }
       
-      /* Container principal sem padding lateral excessivo */
+      /* Container principal */
       .container {
         padding: 15px 12px;
         gap: 20px;
       }
       
-      /* CARDS MAIS TRANSPARENTES NO MOBILE - SOLUÇÃO PARA ENXERGAR O FUNDO */
+      /* Cards com melhor contraste no celular */
       .card {
         padding: 18px 15px;
-        background: rgba(0,0,0,0.35); /* Mais transparente que o desktop (0.35 vs 0.5) */
-        backdrop-filter: blur(2px);
-        transition: all 0.3s ease;
-      }
-      
-      /* Ao passar o dedo no celular, fica um pouco mais opaco para leitura */
-      .card:active {
-        background: rgba(0,0,0,0.55);
+        background: rgba(0,0,0,0.65);
         backdrop-filter: blur(3px);
       }
       
-      /* Saddle Up também mais transparente no mobile */
-      .saddle-up {
-        background: rgba(0,0,0,0.4);
-        padding: 20px 15px;
-        margin: 20px 12px;
-      }
-      
-      /* Títulos dos cards menores */
       .card h2 {
         font-size: 1.4rem;
         margin-bottom: 12px;
       }
       
-      /* Texto dos cards mais compacto */
       .card p {
         font-size: 0.9rem;
         line-height: 1.5;
@@ -245,51 +235,55 @@
         padding: 0 5px;
       }
       
+      /* Saddle Up */
+      .saddle-up {
+        padding: 20px 15px;
+        margin: 20px 12px;
+      }
+      
       .saddle-up h2 {
         font-size: 1.6rem;
         margin-bottom: 12px;
       }
       
-      /* Gráficos com altura fixa e sem quebra */
+      /* Gráficos */
       .chart-wrapper {
         height: 280px !important;
         margin-top: 10px;
       }
       
-      /* Sidebar ocupa 100% e reduz gap */
+      /* Sidebar */
       .sidebar {
         width: 100%;
         gap: 20px;
       }
       
-      /* Links e botões secundários */
+      /* Botões secundários */
       .btn:not(.buy-btn) {
         padding: 12px 20px;
         font-size: 0.9rem;
         margin: 10px 5px;
       }
       
-      /* Footer com padding reduzido */
+      /* Footer */
       footer {
         margin-top: 30px;
         padding: 15px;
         font-size: 0.8rem;
       }
       
-      /* Partículas mais sutis no celular para melhor performance e não atrapalhar a visão do fundo */
+      /* Partículas mais sutis */
       #tsparticles {
-        opacity: 0.3;
-      }
-      
-      /* Ajuste do fundo no celular para centralizar melhor o cowboy */
-      body {
-        background-position: center 30%;
-        background-attachment: scroll; /* Melhor performance no mobile */
+        opacity: 0.4;
       }
     }
     
-    /* Ajustes para telas muito pequenas (menos de 480px) */
+    /* Telas muito pequenas */
     @media (max-width: 480px) {
+      body {
+        background-position: center 15%; /* Ajuste fino para telas muito pequenas */
+      }
+      
       h1 {
         font-size: 2.2rem;
       }
@@ -300,14 +294,8 @@
         width: 90%;
       }
       
-      /* Cards ainda mais transparentes em telas muito pequenas */
       .card {
         padding: 15px 12px;
-        background: rgba(0,0,0,0.3); /* Ainda mais leve para telas pequenas */
-      }
-      
-      .saddle-up {
-        background: rgba(0,0,0,0.35);
       }
       
       .card h2 {
@@ -324,7 +312,7 @@
       }
     }
     
-    /* Tablet (entre 769px e 1024px) - mantém próximo do desktop */
+    /* Tablet (entre 769px e 1024px) */
     @media (min-width: 769px) and (max-width: 1024px) {
       .container {
         gap: 25px;
