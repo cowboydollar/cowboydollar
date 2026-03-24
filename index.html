@@ -9,10 +9,11 @@
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('./cowboy-bg.png');
+      /* Gradiente mais suave e equilibrado para mostrar tanto a parte de cima quanto as patas do cavalo */
+      background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.38)), url('./cowboy-bg.png');
       background-size: cover;
       background-attachment: fixed;
-      background-position: center;   /* Mantém a proporção e centraliza o logo cowboy */
+      background-position: center center;
       color: #fff;
       text-align: center;
       position: relative;
@@ -26,7 +27,7 @@
       text-shadow: 0 0 15px rgba(245,197,66,0.9);
     }
     .saddle-up {
-      background: rgba(0,0,0,0.35);   /* Mais transparente para ver o fundo */
+      background: rgba(0,0,0,0.25);
       border: 3px solid #f5c542;
       border-radius: 15px;
       padding: 30px 25px;
@@ -79,7 +80,7 @@
     .main-content { flex: 1; min-width: 0; }
     .sidebar { width: 450px; flex-shrink: 0; display: flex; flex-direction: column; gap: 30px; }
     .card {
-      background: rgba(0,0,0,0.32);   /* Mais transparente para ver melhor o fundo */
+      background: rgba(0,0,0,0.32);
       border: 1px solid #f5c542;
       border-radius: 15px;
       padding: 25px;
