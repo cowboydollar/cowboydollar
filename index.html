@@ -9,7 +9,8 @@
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('./cowboy-bg.png');
+      /* Fundo mais claro para mostrar melhor as patas do cavalo */
+      background: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.50)), url('./cowboy-bg.png');
       background-size: cover;
       background-attachment: fixed;
       color: #fff;
@@ -134,43 +135,27 @@
       opacity: 0.85;
     }
 
-    /* RESPONSIVIDADE MOBILE - correção para fundo visível e gráficos menores */
+    /* RESPONSIVIDADE MOBILE */
     @media (max-width: 1024px) {
-      .container {
-        flex-direction: column;
-        gap: 50px; /* mais espaço entre seções */
-        padding: 15px;
-      }
-      .sidebar {
-        width: 100%;
-      }
-      .chart-wrapper {
-        height: 300px !important; /* gráficos menores para não dominar tela */
-      }
-      .main-content {
-        order: 1; /* conteúdo principal primeiro */
-      }
-      .sidebar {
-        order: 2; /* gráficos depois */
-      }
+      .container { flex-direction: column; gap: 35px; padding: 15px; }
+      .sidebar { width: 100%; }
+      .chart-wrapper { height: 420px; }
+      h1 { font-size: 3.8rem; }
+      .typewriter-text { font-size: 1.25rem; min-height: 160px; line-height: 1.6; }
+      .fomo-badge { font-size: 1.1rem; padding: 12px; margin: 15px 0; }
+      .btn.buy-btn { font-size: 1.4rem; padding: 14px 28px; width: 80%; margin: 20px auto; display: block; }
     }
-
     @media (max-width: 768px) {
-      .chart-wrapper {
-        height: 280px !important; /* ainda menor em celulares pequenos */
-      }
-      header {
-        padding: 40px 15px 20px;
-      }
-      .saddle-up {
-        margin: 15px 10px;
-      }
-      .card {
-        padding: 18px;
-      }
-      body {
-        background-attachment: scroll; /* corrige fundo fixo que não aparece inteiro em alguns mobiles */
-      }
+      header { padding: 40px 15px 25px; }
+      h1 { font-size: 3rem; }
+      p, .card p { font-size: 1rem; line-height: 1.6; }
+      .chart-wrapper { height: 320px !important; }
+      .card { padding: 18px; margin: 12px 0; }
+      .saddle-up { padding: 20px 15px; margin: 20px 10px; }
+      .typewriter-text { font-size: 1.1rem; min-height: 180px; }
+      .fomo-badge { font-size: 1rem; padding: 12px; margin: 15px 10px; }
+      .btn { padding: 12px 24px; font-size: 1.1rem; }
+      #tsparticles { opacity: 0.5; }
     }
   </style>
 </head>
@@ -253,9 +238,9 @@
       <h2>📊 CowboyDollar Chart (Live)</h2>
       <p style="margin-bottom: 10px; opacity: 0.9;">Real-time price, volume & trades on GeckoTerminal</p>
       <div class="chart-wrapper">
-        <iframe 
-          src="https://www.geckoterminal.com/solana/pools/F4tvJZX1oFEhPSR7eK6u92EEXLN6vWipPY6qzavuF8i5?embed=1&info=0&swaps=0&light_chart=0" 
-          frameborder="0" 
+        <iframe
+          src="https://www.geckoterminal.com/solana/pools/F4tvJZX1oFEhPSR7eK6u92EEXLN6vWipPY6qzavuF8i5?embed=1&info=0&swaps=0&light_chart=0"
+          frameborder="0"
           allowfullscreen>
         </iframe>
       </div>
