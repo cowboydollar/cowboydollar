@@ -1,38 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CowboyDollar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rye&display=swap" rel="stylesheet">
-  <style>
+<style>
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background-color: #0a0a0a; /* Fundo escuro sólido atrás da imagem */
+      background-color: #0a0a0a;
       color: #fff;
       text-align: center;
       position: relative;
       min-height: 100vh;
     }
 
-    /* Camada separada para a imagem de fundo (apenas o logo) */
-    .background-logo {
+    /* Container do fundo com efeito de espelhamento nas laterais */
+    .background-wrapper {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       z-index: -1;
-      background-image: url('./cowboy-bg.png');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: 70% auto; /* AQUI VOCÊ CONTROLA O TAMANHO DO LOGO */
-      opacity: 0.9; /* Leve transparência para suavizar, se quiser */
-      pointer-events: none; /* Permite clicar nos elementos por cima */
+      overflow: hidden;
     }
 
-    /* Gradiente sobreposto para manter a legibilidade (opcional) */
+    /* Imagem principal (centralizada, mostrando cowboy e patas) */
+    .background-main {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      height: 100%;
+      min-width: 100%;
+      object-fit: contain;
+      opacity: 0.95;
+    }
+
+    /* Laterais espelhadas (esquerda e direita) */
+    .background-side {
+      position: absolute;
+      top: 0;
+      width: 30%;
+      height: 100%;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      opacity: 0.7;
+      filter: blur(4px);
+      pointer-events: none;
+    }
+    .side-left {
+      left: 0;
+      background-image: url('./cowboy-bg.png');
+      background-position: right center;
+      transform: scaleX(-1); /* Espelha a imagem */
+      mask-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0));
+      -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0));
+    }
+    .side-right {
+      right: 0;
+      background-image: url('./cowboy-bg.png');
+      background-position: left center;
+      mask-image: linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0));
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0));
+    }
+
+    /* Gradiente suave sobre tudo para manter legibilidade */
     .overlay-gradient {
       position: fixed;
       top: 0;
@@ -44,7 +73,7 @@
       pointer-events: none;
     }
 
-    /* Todo o conteúdo fica acima do fundo */
+    /* Conteúdo principal */
     .content {
       position: relative;
       z-index: 2;
@@ -168,7 +197,6 @@
       opacity: 0.85;
     }
 
-    /* RESPONSIVIDADE MOBILE */
     @media (max-width: 1024px) {
       .container { flex-direction: column; gap: 35px; padding: 15px; }
       .sidebar { width: 100%; }
@@ -177,7 +205,7 @@
       .typewriter-text { font-size: 1.25rem; min-height: 160px; line-height: 1.6; }
       .fomo-badge { font-size: 1.1rem; padding: 12px; margin: 15px 0; }
       .btn.buy-btn { font-size: 1.4rem; padding: 14px 28px; width: 80%; margin: 20px auto; display: block; }
-      .background-logo { background-size: 85% auto; } /* Ajuste para mobile */
+      .side-left, .side-right { width: 20%; }
     }
     @media (max-width: 768px) {
       header { padding: 40px 15px 25px; }
@@ -190,169 +218,6 @@
       .fomo-badge { font-size: 1rem; padding: 12px; margin: 15px 10px; }
       .btn { padding: 12px 24px; font-size: 1.1rem; }
       #tsparticles { opacity: 0.5; }
-      .background-logo { background-size: 90% auto; }
+      .side-left, .side-right { width: 15%; }
     }
   </style>
-</head>
-<body>
-
-<!-- Camada exclusiva para a imagem do logo (tamanho controlado) -->
-<div class="background-logo"></div>
-<div class="overlay-gradient"></div>
-
-<div class="content">
-  <div id="tsparticles" style="position: fixed; inset: 0; pointer-events: none; z-index: -1;"></div>
-
-  <header id="main">
-    <h1>CowboyDollar</h1>
-    <p>Ride the trend before it explodes 🚀</p>
-    
-    <a class="btn buy-btn" href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
-      Buy on Pump.fun
-    </a>
-
-    <div class="fomo-badge">
-      <strong>Low Cap Alert:</strong> Early riders win big! Next 100x potential 🚀<br>
-      Holders growing fast | Liquidity locked | Join the posse on X & Telegram
-    </div>
-  </header>
-
-  <div class="saddle-up">
-    <h2 style="margin-bottom: 15px;">🤠 Saddle Up, Partner!</h2>
-    <div class="typewriter-text" id="typed-text"></div>
-  </div>
-
-  <div class="container">
-    <div class="main-content">
-      <div class="card">
-        <h2>🤠 The Story</h2>
-        <p>In a lawless land of crypto... where only the bold survive...<br><br>a new currency rises from the dust.<br>CowboyDollar isn't just a meme — it's a movement.</p>
-      </div>
-      <div class="card">
-        <h2>📜 About</h2>
-        <p>A Wild West inspired memecoin built for the community.<br>Early riders get the biggest rewards.</p>
-      </div>
-      <div class="card">
-        <h2>🔗 Official Links</h2>
-        <p>
-          <a href="https://x.com/CowbowDollar" target="_blank">X (Twitter)</a><br>
-          <a href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank">Telegram</a><br>
-          <a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">Buy on Pump.fun</a>
-        </p>
-      </div>
-      <div class="card">
-        <h2>📄 Contract Address</h2>
-        <p style="word-break: break-all;">4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump</p>
-      </div>
-      <div class="card">
-        <h2>📄 Whitepaper</h2>
-        <p>
-          Want to understand the mission behind $CWD?<br><br>
-          Dive into the wild west manifesto and discover why this cowboy rides different.
-        </p>
-        <a class="btn" href="whitepaper.html" target="_blank">
-          Read the Whitepaper 🤠
-        </a>
-      </div>
-
-      <div class="card">
-        <h2>🛡️ Security Audit (TokenSniffer)</h2>
-        <p>
-          Basic automated scan performed by TokenSniffer.<br><br>
-          This tool checks for common risks such as honeypot, rug pull potential, holder distribution, liquidity lock, and more.<br><br>
-          <strong>This is NOT a deep professional audit (like Certik)</strong>. Use it as part of your own research (DYOR). Always verify on-chain!
-        </p>
-        <a class="btn" href="https://tokensniffer.com/token/solana/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank" style="background:#ffd700; color:#000;">
-          View TokenSniffer Audit 🛡️
-        </a>
-      </div>
-
-      <div class="card">
-        <h2>🚀 Join the Ride</h2>
-        <p>Be part of the posse and ride with us!</p>
-      </div>
-    </div>
-
-    <div class="sidebar">
-      <div class="card">
-        <h2>📊 CowboyDollar Chart (Live)</h2>
-        <p style="margin-bottom: 10px; opacity: 0.9;">Real-time price, volume & trades on GeckoTerminal</p>
-        <div class="chart-wrapper">
-          <iframe
-            src="https://www.geckoterminal.com/solana/pools/F4tvJZX1oFEhPSR7eK6u92EEXLN6vWipPY6qzavuF8i5?embed=1&info=0&swaps=0&light_chart=0"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>📈 BTC Live Price</h2>
-        <p style="margin-bottom: 15px; opacity: 0.9;">BINANCE:BTCUSDT • Updating live</p>
-        <div class="chart-wrapper tradingview-widget-container">
-          <div id="tradingview_btc" style="height: 100%;"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    © 2026 CowboyDollar - The Next 100x Starts Here
-  </footer>
-</div>
-
-<!-- Scripts -->
-<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-<script>
-  new TradingView.widget({
-    "width": "100%",
-    "height": "100%",
-    "symbol": "BINANCE:BTCUSDT",
-    "interval": "1",
-    "timezone": "Etc/UTC",
-    "theme": "dark",
-    "style": "1",
-    "locale": "en",
-    "toolbar_bg": "#1e222d",
-    "enable_publishing": false,
-    "hide_top_toolbar": false,
-    "hide_legend": true,
-    "allow_symbol_change": true,
-    "save_image": false,
-    "container_id": "tradingview_btc"
-  });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
-<script>
-  tsParticles.load("tsparticles", {
-    particles: {
-      number: { value: 50 },
-      color: { value: ["#f5c542", "#ffd700"] },
-      shape: { type: "circle" },
-      opacity: { value: 0.4, random: true },
-      size: { value: 3, random: true },
-      move: { enable: true, speed: 0.8, direction: "none", random: true, outModes: "out" }
-    },
-    interactivity: { events: { onhover: { enable: false } } },
-    detectRetina: true
-  });
-</script>
-
-<script>
-  const textElement = document.getElementById('typed-text');
-  const fullText = "Tired of dog, cat, monkey & frog tokens? Saddle up on this fearless cowboy's horse and ride through the Wild West of crypto in search of success! Let's go together! 🤠🐎🚀";
-  let index = 0;
-  function type() {
-    if (index < fullText.length) {
-      textElement.innerHTML += fullText.charAt(index);
-      index++;
-      setTimeout(type, 50);
-    } else {
-      textElement.innerHTML += '<span class="cursor"></span>';
-    }
-  }
-  window.onload = type;
-</script>
-</body>
-</html>
