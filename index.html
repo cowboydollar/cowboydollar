@@ -31,7 +31,6 @@
       text-shadow: 0 0 15px #ffd700;
       margin-bottom: 30px;
     }
-    .hero-buttons { margin: 30px 0; }
     .btn {
       display: inline-block;
       margin: 10px;
@@ -46,7 +45,7 @@
       color: #000;
       box-shadow: 0 0 30px rgba(0,255,159,0.9);
     }
-    .buy-btn:hover { transform: scale(1.08); box-shadow: 0 0 50px rgba(0,255,159,1); }
+    .buy-btn:hover { transform: scale(1.08); }
     .join-btn {
       background: transparent;
       color: #f5c542;
@@ -74,25 +73,7 @@
       white-space: pre-wrap;
       line-height: 1.6;
     }
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin: 40px 0;
-    }
-    .stat-card {
-      background: rgba(0,0,0,0.25);
-      border: 1px solid #f5c542;
-      border-radius: 12px;
-      padding: 18px 28px;
-      min-width: 180px;
-    }
-    .stat-number {
-      font-size: 2rem;
-      color: #00ff9f;
-      font-weight: bold;
-    }
+
     .container {
       max-width: 1200px;
       margin: auto;
@@ -103,6 +84,7 @@
     }
     .main-content { flex: 1; }
     .sidebar { width: 460px; flex-shrink: 0; display: flex; flex-direction: column; gap: 30px; }
+
     .card {
       background: rgba(0,0,0,0.26);
       border: 1px solid #f5c542;
@@ -112,6 +94,7 @@
       transition: transform 0.3s;
     }
     .card:hover { transform: translateY(-8px); }
+
     .chart-wrapper {
       flex: 1;
       position: relative;
@@ -122,13 +105,10 @@
       margin-top: 15px;
       height: 460px;
     }
+
     h2 { color: #f5c542; text-shadow: 0 0 12px rgba(245,197,66,0.8); margin-bottom: 15px; }
-    footer {
-      margin-top: 80px;
-      padding: 30px;
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
+    footer { margin-top: 80px; padding: 30px; font-size: 0.95rem; opacity: 0.9; }
+
     @media (max-width: 1024px) {
       .container { flex-direction: column; gap: 30px; }
       .sidebar { width: 100%; }
@@ -144,16 +124,20 @@
   </style>
 </head>
 <body>
+
 <header id="main">
   <h1>CowboyDollar</h1>
   <p class="tagline">Tired of dog, cat, monkey & frog tokens?<br>Saddle up — the real Wild West ride starts here 🤠🐎🚀</p>
 
-  <div class="hero-buttons">
+  <div>
     <a class="btn buy-btn" href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
       Buy $CWD on Pump.fun
     </a>
     <a class="btn join-btn" href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank">
-      Join the Posse
+      Join Telegram
+    </a>
+    <a class="btn join-btn" href="https://x.com/CowbowDollar" target="_blank">
+      Follow on X
     </a>
   </div>
 </header>
@@ -161,25 +145,6 @@
 <div class="saddle-up">
   <h2>🤠 Saddle Up, Partner!</h2>
   <div class="typewriter-text" id="typed-text"></div>
-</div>
-
-<div class="stats">
-  <div class="stat-card">
-    <div class="stat-number">1,000,000,000</div>
-    <div>Total Supply</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">~4.2K</div>
-    <div>Holders (growing fast)</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">$XX.XXX</div>
-    <div>Market Cap</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">Locked</div>
-    <div>Liquidity</div>
-  </div>
 </div>
 
 <div class="container">
@@ -190,11 +155,10 @@
     </div>
 
     <div class="card">
-      <h2>📜 Roadmap</h2>
-      <p><strong>Phase 1:</strong> Launch & Liquidity Lock ✓<br>
-         <strong>Phase 2:</strong> Marketing Push + CoinVote + CMC Application<br>
-         <strong>Phase 3:</strong> CEX Listings & Community Takeover<br>
-         <strong>Phase 4:</strong> The Moon Ride Begins</p>
+      <h2>📄 Contract Address</h2>
+      <p style="word-break: break-all; font-size: 1.1rem; background: rgba(0,0,0,0.4); padding: 12px; border-radius: 8px;">
+        4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump
+      </p>
     </div>
 
     <div class="card">
@@ -223,6 +187,7 @@
     </div>
   </div>
 </div>
+
 <footer>
   © 2026 CowboyDollar • Built for the real riders • DYOR • Not financial advice
 </footer>
