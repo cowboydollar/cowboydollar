@@ -5,25 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CowboyDollar</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rye&display=swap" rel="stylesheet">
-
 <style>
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
-
-  /* MELHOR ENQUADRAMENTO DO FUNDO */
+  /* CLARIDADE TOTAL: gradiente bem mais suave */
   background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.28)), url('./cowboy-bg.png');
-  background-size: 115%;
-  background-position: center bottom;
+  background-size: cover;
   background-attachment: fixed;
-
+  background-position: center center;
   color: #fff;
   text-align: center;
   position: relative;
 }
-
 header { padding: 60px 20px 30px; }
-
 h1 {
   font-family: 'Rye', cursive;
   font-size: 4.5rem;
@@ -31,8 +26,8 @@ h1 {
   margin-bottom: 10px;
   text-shadow: 0 0 15px rgba(245,197,66,0.9);
 }
-
 .saddle-up {
+  /* Card Saddle Up bem mais claro */
   background: rgba(0,0,0,0.18);
   border: 3px solid #f5c542;
   border-radius: 15px;
@@ -41,7 +36,6 @@ h1 {
   max-width: 95%;
   box-shadow: 0 0 40px rgba(245,197,66,0.6);
 }
-
 .typewriter-text {
   font-size: 1.35rem;
   color: #ffd700;
@@ -54,7 +48,6 @@ h1 {
   word-wrap: break-word;
   line-height: 1.5;
 }
-
 .cursor {
   display: inline-block;
   width: 10px;
@@ -63,9 +56,7 @@ h1 {
   animation: blink 0.8s step-end infinite;
   vertical-align: middle;
 }
-
 @keyframes blink { 50% { opacity: 0; } }
-
 .fomo-badge {
   margin: 20px 0;
   font-size: 1.2rem;
@@ -79,7 +70,6 @@ h1 {
   margin-left: auto;
   margin-right: auto;
 }
-
 .container {
   max-width: 1200px;
   margin: auto;
@@ -88,45 +78,20 @@ h1 {
   gap: 40px;
   align-items: stretch;
 }
-
 .main-content { flex: 1; min-width: 0; }
-
-.sidebar {
-  width: 450px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-/* 🔥 CARDS MODERNOS */
+.sidebar { width: 450px; flex-shrink: 0; display: flex; flex-direction: column; gap: 30px; }
 .card {
-  background: rgba(20, 20, 20, 0.45);
-  border: 1px solid rgba(245,197,66,0.6);
-  border-radius: 18px;
+  /* Cards mais claros */
+  background: rgba(0,0,0,0.25);
+  border: 1px solid #f5c542;
+  border-radius: 15px;
   padding: 25px;
   margin: 0;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  box-shadow: 0 0 30px rgba(245,197,66,0.4);
   flex: 1;
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(6px);
-  transition: all 0.3s ease;
-  animation: fadeUp 0.6s ease;
 }
-
-.card:hover {
-  transform: translateY(-6px) scale(1.01);
-  background: rgba(30, 30, 30, 0.65);
-  box-shadow: 0 20px 60px rgba(245,197,66,0.25);
-}
-
-/* animação leve */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 .chart-wrapper {
   flex: 1;
   position: relative;
@@ -136,7 +101,6 @@ h1 {
   box-shadow: 0 0 30px rgba(245,197,66,0.5);
   margin-top: 15px;
 }
-
 .chart-wrapper iframe,
 .chart-wrapper div {
   position: absolute;
@@ -145,21 +109,9 @@ h1 {
   width: 100%;
   height: 100%;
 }
-
-h2 {
-  color: #f5c542;
-  text-shadow: 0 0 12px rgba(245,197,66,0.8);
-  margin-bottom: 10px;
-}
-
-a {
-  color: #f5c542;
-  text-decoration: none;
-  font-weight: bold;
-}
-
+h2 { color: #f5c542; text-shadow: 0 0 12px rgba(245,197,66,0.8); margin-bottom: 10px; }
+a { color: #f5c542; text-decoration: none; font-weight: bold; }
 a:hover { text-decoration: underline; }
-
 .btn {
   display: inline-block;
   margin: 15px 10px;
@@ -168,38 +120,17 @@ a:hover { text-decoration: underline; }
   font-weight: bold;
   transition: 0.3s;
 }
-
-/* 🔥 BOTÃO PREMIUM */
 .buy-btn {
   background: #00ff9f;
   color: #000;
   font-size: 1.5rem;
   box-shadow: 0 0 25px rgba(0,255,159,0.8);
   animation: pulse-buy 2s infinite;
-  position: relative;
-  overflow: hidden;
 }
-
-.buy-btn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
-  transition: 0.5s;
-}
-
-.buy-btn:hover::after {
-  left: 100%;
-}
-
 @keyframes pulse-buy {
   0%, 100% { box-shadow: 0 0 25px rgba(0,255,159,0.8); transform: scale(1); }
   50% { box-shadow: 0 0 50px rgba(0,255,159,1); transform: scale(1.06); }
 }
-
 footer {
   margin-top: 50px;
   padding: 20px;
@@ -207,21 +138,30 @@ footer {
   opacity: 0.85;
 }
 
-/* RESPONSIVIDADE */
+/* RESPONSIVIDADE MOBILE */
 @media (max-width: 1024px) {
   .container { flex-direction: column; gap: 35px; padding: 15px; }
   .sidebar { width: 100%; }
   .chart-wrapper { height: 420px; }
   h1 { font-size: 3.8rem; }
+  .typewriter-text { font-size: 1.25rem; min-height: 160px; line-height: 1.6; }
+  .fomo-badge { font-size: 1.1rem; padding: 12px; margin: 15px 0; }
+  .btn.buy-btn { font-size: 1.4rem; padding: 14px 28px; width: 80%; margin: 20px auto; display: block; }
 }
-
 @media (max-width: 768px) {
+  header { padding: 40px 15px 25px; }
+  h1 { font-size: 3rem; }
+  p, .card p { font-size: 1rem; line-height: 1.6; }
   .chart-wrapper { height: 320px !important; }
-  body { background-attachment: scroll; }
+  .card { padding: 18px; margin: 12px 0; }
+  .saddle-up { padding: 20px 15px; margin: 20px 10px; }
+  .typewriter-text { font-size: 1.1rem; min-height: 180px; }
+  .fomo-badge { font-size: 1rem; padding: 12px; margin: 15px 10px; }
+  .btn { padding: 12px 24px; font-size: 1.1rem; }
+  #tsparticles { opacity: 0.5; }
 }
 </style>
 </head>
-
 <body>
 
 <div id="tsparticles" style="position: fixed; inset: 0; pointer-events: none; z-index: -2;"></div>
@@ -240,7 +180,141 @@ Holders growing fast | Liquidity locked | Join the posse on X & Telegram
 </div>
 </header>
 
-<!-- resto do HTML permanece exatamente igual -->
+<div class="saddle-up">
+<h2 style="margin-bottom: 15px;">🤠 Saddle Up, Partner!</h2>
+<div class="typewriter-text" id="typed-text"></div>
+</div>
 
+<div class="container">
+<div class="main-content">
+<div class="card">
+<h2>🤠 The Story</h2>
+<p>In a lawless land of crypto... where only the bold survive...<br><br>a new currency rises from the dust.<br>CowboyDollar isn't just a meme — it's a movement.</p>
+</div>
+<div class="card">
+<h2>📜 About</h2>
+<p>A Wild West inspired memecoin built for the community.<br>Early riders get the biggest rewards.</p>
+</div>
+<div class="card">
+<h2>🔗 Official Links</h2>
+<p>
+<a href="https://x.com/CowbowDollar" target="_blank">X (Twitter)</a><br>
+<a href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank">Telegram</a><br>
+<a href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">Buy on Pump.fun</a>
+</p>
+</div>
+<div class="card">
+<h2>📄 Contract Address</h2>
+<p style="word-break: break-all;">4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump</p>
+</div>
+<div class="card">
+<h2>📄 Whitepaper</h2>
+<p>
+Want to understand the mission behind $CWD?<br><br>
+Dive into the wild west manifesto and discover why this cowboy rides different.
+</p>
+<a class="btn" href="whitepaper.html" target="_blank">
+Read the Whitepaper 🤠
+</a>
+</div>
+
+<div class="card">
+<h2>🛡️ Security Audit (TokenSniffer)</h2>
+<p>
+Basic automated scan performed by TokenSniffer.<br><br>
+This tool checks for common risks such as honeypot, rug pull potential, holder distribution, liquidity lock, and more.<br><br>
+<strong>This is NOT a deep professional audit (like Certik)</strong>. Use it as part of your own research (DYOR). Always verify on-chain!
+</p>
+<a class="btn" href="https://tokensniffer.com/token/solana/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank" style="background:#ffd700; color:#000;">
+View TokenSniffer Audit 🛡️
+</a>
+</div>
+
+<div class="card">
+<h2>🚀 Join the Ride</h2>
+<p>Be part of the posse and ride with us!</p>
+</div>
+</div>
+
+<div class="sidebar">
+<div class="card">
+<h2>📊 CowboyDollar Chart (Live)</h2>
+<p style="margin-bottom: 10px; opacity: 0.9;">Real-time price, volume & trades on GeckoTerminal</p>
+<div class="chart-wrapper">
+<iframe
+src="https://www.geckoterminal.com/solana/pools/F4tvJZX1oFEhPSR7eK6u92EEXLN6vWipPY6qzavuF8i5?embed=1&info=0&swaps=0&light_chart=0"
+frameborder="0"
+allowfullscreen>
+</iframe>
+</div>
+</div>
+
+<div class="card">
+<h2>📈 BTC Live Price</h2>
+<p style="margin-bottom: 15px; opacity: 0.9;">BINANCE:BTCUSDT • Updating live</p>
+<div class="chart-wrapper tradingview-widget-container">
+<div id="tradingview_btc" style="height: 100%;"></div>
+</div>
+</div>
+</div>
+</div>
+
+<footer>
+© 2026 CowboyDollar - The Next 100x Starts Here
+</footer>
+
+<!-- Scripts -->
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+<script>
+new TradingView.widget({
+"width": "100%",
+"height": "100%",
+"symbol": "BINANCE:BTCUSDT",
+"interval": "1",
+"timezone": "Etc/UTC",
+"theme": "dark",
+"style": "1",
+"locale": "en",
+"toolbar_bg": "#1e222d",
+"enable_publishing": false,
+"hide_top_toolbar": false,
+"hide_legend": true,
+"allow_symbol_change": true,
+"save_image": false,
+"container_id": "tradingview_btc"
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+<script>
+tsParticles.load("tsparticles", {
+particles: {
+number: { value: 50 },
+color: { value: ["#f5c542", "#ffd700"] },
+shape: { type: "circle" },
+opacity: { value: 0.4, random: true },
+size: { value: 3, random: true },
+move: { enable: true, speed: 0.8, direction: "none", random: true, outModes: "out" }
+},
+interactivity: { events: { onhover: { enable: false } } },
+detectRetina: true
+});
+</script>
+
+<script>
+const textElement = document.getElementById('typed-text');
+const fullText = "Tired of dog, cat, monkey & frog tokens? Saddle up on this fearless cowboy's horse and ride through the Wild West of crypto in search of success! Let's go together! 🤠🐎🚀";
+let index = 0;
+function type() {
+if (index < fullText.length) {
+textElement.innerHTML += fullText.charAt(index);
+index++;
+setTimeout(type, 50);
+} else {
+textElement.innerHTML += '<span class="cursor"></span>';
+}
+}
+window.onload = type;
+</script>
 </body>
 </html>
