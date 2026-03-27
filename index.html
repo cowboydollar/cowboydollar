@@ -9,7 +9,8 @@
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('./cowboy-bg.png');
+  /* Aumentei a opacidade do gradiente para garantir leitura se o fundo demorar */
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('./cowboy-bg.png');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -73,18 +74,24 @@ h1 {
   padding: 20px;
   display: flex;
   gap: 30px;
+  /* CORREÇÃO DE ALINHAMENTO: Alinha pelo topo no desktop */
+  align-items: flex-start;
 }
-.main-content { flex: 1.5; min-width: 0; }
+/* main-content e sidebar agora dividem o espaço de forma mais equilibrada */
+.main-content { flex: 1.2; min-width: 0; }
 .sidebar { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 30px; }
 
 .card {
-  background: rgba(20, 15, 10, 0.85);
+  background: rgba(20, 15, 10, 0.9);
   border: 1px solid #f5c542;
   border-radius: 15px;
   padding: 30px;
   margin-bottom: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
   transition: transform 0.3s;
+  /* Garante que os cards internos alinhem o conteúdo no topo */
+  display: flex;
+  flex-direction: column;
 }
 .card:hover { transform: translateY(-5px); }
 
@@ -94,20 +101,25 @@ h1 {
   color: #2c1b0a !important;
   border: 10px solid #3e2723 !important;
   padding: 20px;
+  /* Garante que o Wanted Poster não estique */
+  align-self: center;
+  width: 90%;
 }
 .wanted-card h2 { color: #2c1b0a !important; text-shadow: none !important; font-family: 'Rye', cursive; font-size: 2.5rem; margin: 0;}
 .wanted-img { width: 100%; border: 3px solid #2c1b0a; margin: 15px 0; filter: sepia(0.5) contrast(1.2); }
 
+/* CORREÇÃO DO GRÁFICO: Aumentei a altura para 550px */
 .chart-wrapper {
-  height: 450px;
+  height: 550px;
   position: relative;
   border-radius: 12px;
   border: 2px solid #f5c542;
   overflow: hidden;
+  margin-top: 15px;
 }
 .chart-wrapper iframe { width: 100%; height: 100%; border: none; }
 
-h2 { color: #f5c542; text-shadow: 0 0 10px rgba(245,197,66,0.5); margin-top: 0; }
+h2 { color: #f5c542; text-shadow: 0 0 10px rgba(245,197,66,0.5); margin-top: 0; margin-bottom: 15px; }
 .ca-box {
   background: #000;
   padding: 15px;
@@ -118,6 +130,7 @@ h2 { color: #f5c542; text-shadow: 0 0 10px rgba(245,197,66,0.5); margin-top: 0; 
   color: #00ff9f;
   font-family: monospace;
   margin-top: 10px;
+  font-size: 0.9rem;
 }
 .ca-box:hover { background: #111; }
 
@@ -129,6 +142,7 @@ h2 { color: #f5c542; text-shadow: 0 0 10px rgba(245,197,66,0.5); margin-top: 0; 
   text-decoration: none;
   transition: 0.3s;
   cursor: pointer;
+  border: none;
 }
 .buy-btn {
   background: #00ff9f;
@@ -142,12 +156,15 @@ h2 { color: #f5c542; text-shadow: 0 0 10px rgba(245,197,66,0.5); margin-top: 0; 
   50% { transform: scale(1.05); box-shadow: 0 0 50px rgba(0,255,159,0.9); }
 }
 
-footer { padding: 40px; opacity: 0.7; font-size: 0.9rem; }
+footer { padding: 40px; opacity: 0.7; font-size: 0.9rem; margin-top: 50px; }
 
+/* AJUSTE MOBILE */
 @media (max-width: 900px) {
-  .container { flex-direction: column; }
+  .container { flex-direction: column; align-items: stretch; gap: 20px; }
   .sidebar { width: 100%; min-width: auto; }
+  .chart-wrapper { height: 400px; }
   h1 { font-size: 3.5rem; }
+  .buy-btn { font-size: 1.3rem; padding: 12px 24px; }
 }
 </style>
 </head>
@@ -177,7 +194,7 @@ footer { padding: 40px; opacity: 0.7; font-size: 0.9rem; }
   <div class="main-content">
     <div class="card">
       <h2>📜 The Manifesto</h2>
-      <p>In a lawless land of crypto... where only the bold survive, a new currency rises from the dust. CowboyDollar isn't just a meme — it's the gold standard of the Wild West. We're here to clean up the streets and reward the posse.</p>
+      <p style="line-height: 1.6;">In a lawless land of crypto... where only the bold survive, a new currency rises from the dust. CowboyDollar isn't just a meme — it's the gold standard of the Wild West. We're here to clean up the streets and reward the posse.</p>
     </div>
 
     <div class="card" onclick="copyCA()">
@@ -187,7 +204,8 @@ footer { padding: 40px; opacity: 0.7; font-size: 0.9rem; }
 
     <div class="card">
       <h2>🔗 Join the Posse</h2>
-      <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 10px;">
+      <p style="margin-bottom: 20px;">Don't ride alone. Connect with the official Cowboy Dollar community.</p>
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
         <a class="btn" href="https://x.com/CowbowDollar" target="_blank" style="background:#fff; color:#000;">X / TWITTER</a>
         <a class="btn" href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank" style="background:#24A1DE; color:#fff;">TELEGRAM</a>
         <a class="btn" href="whitepaper.html" target="_blank" style="background:#f5c542; color:#000;">WHITEPAPER</a>
@@ -196,24 +214,25 @@ footer { padding: 40px; opacity: 0.7; font-size: 0.9rem; }
     
     <div class="card">
       <h2>🛡️ Security</h2>
-      <p>Community driven. Liquidity managed by Pump.fun protocol. Check the automated audit below.</p>
-      <a class="btn" href="https://tokensniffer.com/token/solana/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank" style="border: 1px solid #f5c542; color: #f5c542;">Check TokenSniffer 🛡️</a>
+      <p style="margin-bottom: 15px;">Community driven. Liquidity managed by Pump.fun protocol. Check the automated audit below.</p>
+      <a class="btn" href="https://tokensniffer.com/token/solana/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank" style="border: 1px solid #f5c542; color: #f5c542; background: transparent;">Check TokenSniffer 🛡️</a>
     </div>
   </div>
 
   <div class="sidebar">
     <div class="card wanted-card">
-      <p style="font-weight: bold; letter-spacing: 5px;">DEAD OR ALIVE</p>
+      <p style="font-weight: bold; letter-spacing: 5px; margin: 0 0 10px;">DEAD OR ALIVE</p>
       <h2>WANTED</h2>
-      <img src="./logo.png" class="wanted-img" alt="Cowboy Dollar">
-      <p style="font-family: 'Rye'; font-size: 1.2rem;">REWARD: 1000X GAINS</p>
-      <p style="font-size: 0.8rem; margin-top: 10px;">For leading the Solana revolution.</p>
+      <img src="./logo.png" class="wanted-img" alt="Cowboy Dollar Logo">
+      <p style="font-family: 'Rye'; font-size: 1.2rem; margin: 10px 0 5px;">REWARD: 1000X GAINS</p>
+      <p style="font-size: 0.8rem; margin: 0;">For leading the Solana revolution.</p>
     </div>
 
     <div class="card">
       <h2>📊 Live Chart</h2>
+      <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 10px;">Tracking $CWD price and volume on GeckoTerminal</p>
       <div class="chart-wrapper">
-        <iframe src="https://www.geckoterminal.com/solana/pools/F4tvJZX1oFEhPSR7eK6u92EEXLN6vWipPY6qzavuF8i5?embed=1&info=0&swaps=1&light_chart=0"></iframe>
+        <iframe src="https://www.geckoterminal.com/solana/pools/F4tvJZX1oFEhPSR7eK6u92EEXLN6vWipPY6qzavuF8i5?embed=1&info=0&light_chart=0"></iframe>
       </div>
     </div>
   </div>
