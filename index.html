@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('./cowboy-bg.png');
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('./cowboy-bg.png');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -36,20 +36,21 @@ h1 {
 }
 .typewriter-text { font-size: 1.2rem; color: #ffd700; min-height: 40px; line-height: 1.5; }
 
+/* GRID SYSTEM - TRAVADO */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 25px;
   align-items: stretch;
 }
 
 .left-col, .right-col {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
 
 .card {
@@ -61,12 +62,11 @@ h1 {
   text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 0;
 }
 
 .left-col .card { flex-grow: 1; }
 
+/* WANTED CARD */
 .wanted-card {
   flex-grow: 0 !important;
   background: #f4e4bc !important;
@@ -77,10 +77,11 @@ h1 {
 .wanted-card h2 { color: #2c1b0a !important; text-shadow: none !important; font-family: 'Rye', cursive; font-size: 2rem; margin: 5px 0;}
 .wanted-img { width: 100%; border: 2px solid #2c1b0a; margin: 10px 0; filter: sepia(0.3); }
 
+/* CHART CARD */
 .chart-card { flex-grow: 1; }
 .chart-wrapper {
   flex-grow: 1;
-  min-height: 450px;
+  min-height: 480px;
   border-radius: 8px;
   border: 1px solid #f5c542;
   overflow: hidden;
@@ -88,6 +89,7 @@ h1 {
 .chart-wrapper iframe { width: 100%; height: 100%; border: none; }
 
 h2 { color: #f5c542; text-shadow: 0 0 10px rgba(245,197,66,0.5); margin: 0 0 15px; font-size: 1.4rem; }
+
 .ca-box {
   background: #000;
   padding: 15px;
@@ -147,14 +149,16 @@ footer { padding: 40px; opacity: 0.6; font-size: 0.8rem; }
   <div class="left-col">
     <div class="card">
       <h2>📜 The Manifesto</h2>
-      <p style="line-height: 1.5; margin-bottom: 15px; font-size: 1rem;">
+      <p style="line-height: 1.5; margin-bottom: 20px; font-size: 1rem;">
         In a lawless land of crypto... where only the bold survive, CowboyDollar is the gold standard of the Wild West. We're here to clean up the streets and reward the posse.
       </p>
-      <div style="background: rgba(245,197,66,0.1); border-left: 3px solid #f5c542; padding: 12px; font-size: 0.9rem; border-radius: 4px;">
-        <strong>🤠 Tokenomics:</strong><br>
-        • Supply: 1,000,000,000 $CWD 💰<br>
-        • Tax: 0% Buy / 0% Sell 🚫🏦<br>
-        • LP: Burned 🔒
+      <div style="background: rgba(245,197,66,0.1); border-left: 4px solid #f5c542; padding: 15px; border-radius: 8px;">
+        <strong style="color: #f5c542; font-size: 1.2rem; display: block; margin-bottom: 10px;">🤠 Sheriff's Rules:</strong>
+        <div style="font-size: 1.15rem; line-height: 2; color: #fff; font-weight: bold;">
+            • Supply: 1,000,000,000 $CWD 💰<br>
+            • Tax: 0% Buy / 0% Sell 🚫🏦<br>
+            • LP: Burned / Locked Forever 🔥🔒
+        </div>
       </div>
     </div>
 
@@ -167,13 +171,8 @@ footer { padding: 40px; opacity: 0.6; font-size: 0.8rem; }
     <div class="card">
       <h2>🔗 Join the Posse</h2>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
-        <a class="btn" href="https://x.com/CowbowDollar" target="_blank" style="background:#fff; color:#000;">X / TWITTER</a>
-        <a class="btn" href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank" style="background:#24A1DE; color:#fff;">TELEGRAM</a>
+        <a class="btn" href="https://x.com/CowbowDollar" target="_blank" style="background:#fff; color:#000;">𝕏 Twitter</a>
+        <a class="btn" href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank" style="background:#24A1DE; color:#fff;">✈️ Telegram</a>
       </div>
-      <a class="btn" href="whitepaper.html" target="_blank" style="background:#f5c542; color:#000; width:100%; box-sizing:border-box;">READ WHITEPAPER</a>
-    </div>
-  </div>
-
-  <div class="right-col">
-    <div class="card wanted-card">
-      <p style="font-weight: bold; letter-spacing: 3px; margin: 0; font-size: 0.8rem;">DEAD OR ALIVE</p>
+      <a class="btn" href="whitepaper.html" target="_blank" style="background:#f5c542; color:#000; width:100%; box-sizing:border-box; margin-bottom:15px;">📜 READ WHITEPAPER</a>
+      <div style="border-top: 1px dashed rgba(245,197,66,0.3); padding-top: 10px; font-size: 0.85rem
