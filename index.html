@@ -21,7 +21,8 @@ body {
 header { padding: 40px 20px 20px; }
 h1 {
   font-family: 'Rye', cursive;
-  font-size: 4.5rem;
+  /* Título responsivo: mínimo 2.5rem, máximo 4.5rem */
+  font-size: clamp(2.5rem, 8vw, 4.5rem); 
   color: #f5c542;
   margin: 0 0 10px;
   text-shadow: 0 0 20px rgba(245,197,66,0.8);
@@ -34,7 +35,7 @@ h1 {
   margin: 0 auto 30px;
   max-width: 900px;
 }
-.typewriter-text { font-size: 1.2rem; color: #ffd700; min-height: 40px; line-height: 1.5; }
+.typewriter-text { font-size: 1.1rem; color: #ffd700; min-height: 40px; line-height: 1.5; }
 
 .container {
   max-width: 1200px;
@@ -65,8 +66,6 @@ h1 {
   transition: transform 0.3s ease;
 }
 
-.left-col .card { flex-grow: 1; }
-
 /* EFEITO GLOW NO WANTED */
 .wanted-card {
   flex-grow: 0 !important;
@@ -78,7 +77,7 @@ h1 {
 }
 @keyframes pulse-glow {
   from { box-shadow: 0 0 10px rgba(245,197,66,0.2); }
-  to { box-shadow: 0 0 30px rgba(245,197,66,0.5); }
+  to { box-shadow: 0 0 30px rgba(245,197,66,0.6); }
 }
 
 .wanted-card h2 { color: #2c1b0a !important; text-shadow: none !important; font-family: 'Rye', cursive; font-size: 2rem; margin: 5px 0;}
@@ -121,7 +120,7 @@ h2 { color: #f5c542; text-shadow: 0 0 10px rgba(245,197,66,0.5); margin: 0 0 15p
   border: none;
   text-align: center;
 }
-.btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+.btn:hover { transform: translateY(-3px); filter: brightness(1.2); }
 
 .buy-btn {
   background: #00ff9f;
@@ -145,14 +144,15 @@ h2 { color: #f5c542; text-shadow: 0 0 10px rgba(245,197,66,0.5); margin: 0 0 15p
   height: 100%;
   background: #00ff9f;
   box-shadow: 0 0 10px #00ff9f;
+  animation: bar-load 2s ease-out;
 }
+@keyframes bar-load { from { width: 0; } to { width: 65%; } }
 
 footer { padding: 40px; opacity: 0.6; font-size: 0.8rem; }
 
 @media (max-width: 900px) {
   .container { grid-template-columns: 1fr; }
-  .left-col .card { flex-grow: 0; }
-  h1 { font-size: 3rem; }
+  .left-col, .right-col { flex-grow: 0; }
 }
 </style>
 </head>
@@ -212,7 +212,7 @@ footer { padding: 40px; opacity: 0.6; font-size: 0.8rem; }
         <strong style="color: #f5c542; font-size: 0.9rem; display: block; margin-bottom: 8px;">🎯 COMMUNITY BOUNTY BOARD:</strong>
         <div style="font-size: 0.85rem; line-height: 1.8; color: #00ff9f;">
           ✅ Phase 1: Launch Site & LP Burn <br>
-          <span style="color:#fff;">🚀 Phase 2: 1,000 Holders</span>
+          <span style="color:#fff;">🚀 Phase 2: 1,000 Holders (In Progress)</span>
           <div class="progress-container"><div class="progress-bar"></div></div>
           📣 Phase 3: Daily Twitter Raids <br>
           💰 Reward: 1000x Moon Mission
