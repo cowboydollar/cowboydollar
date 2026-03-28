@@ -9,7 +9,6 @@
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
-  /* Aumentei a opacidade do gradiente para garantir leitura se o fundo demorar */
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('./cowboy-bg.png');
   background-size: cover;
   background-attachment: fixed;
@@ -19,107 +18,76 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-header { padding: 80px 20px 40px; }
+header { padding: 40px 20px 20px; }
 h1 {
   font-family: 'Rye', cursive;
-  font-size: 5rem;
+  font-size: 4.5rem;
   color: #f5c542;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   text-shadow: 0 0 20px rgba(245,197,66,0.8);
 }
 .saddle-up {
   background: rgba(0,0,0,0.4);
-  border: 3px solid #f5c542;
+  border: 2px solid #f5c542;
   border-radius: 15px;
-  padding: 30px 25px;
-  margin: 30px auto;
-  max-width: 900px;
-  box-shadow: 0 0 40px rgba(245,197,66,0.3);
-}
-.typewriter-text {
-  font-size: 1.4rem;
-  color: #ffd700;
-  text-shadow: 0 0 10px rgba(255,215,0,0.5);
-  min-height: 100px;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  white-space: pre-wrap;
-  line-height: 1.6;
-}
-.cursor {
-  display: inline-block;
-  width: 10px;
-  height: 1.2em;
-  background: #ffd700;
-  animation: blink 0.8s step-end infinite;
-  vertical-align: middle;
-}
-@keyframes blink { 50% { opacity: 0; } }
-
-.fomo-badge {
-  margin: 30px auto;
-  font-size: 1.2rem;
-  color: #00ff9f;
-  background: rgba(0,255,159,0.1);
   padding: 20px;
-  border-radius: 12px;
-  border: 2px dashed #00ff9f;
-  max-width: 700px;
+  margin: 0 auto 30px;
+  max-width: 900px;
 }
+.typewriter-text { font-size: 1.2rem; color: #ffd700; min-height: 40px; line-height: 1.5; }
 
 .container {
   max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  display: flex;
-  gap: 30px;
-  /* CORREÇÃO DE ALINHAMENTO: Alinha pelo topo no desktop */
-  align-items: flex-start;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
 }
-/* main-content e sidebar agora dividem o espaço de forma mais equilibrada */
-.main-content { flex: 1.2; min-width: 0; }
-.sidebar { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 30px; }
+
+.left-col, .right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 .card {
   background: rgba(20, 15, 10, 0.9);
   border: 1px solid #f5c542;
-  border-radius: 15px;
-  padding: 30px;
-  margin-bottom: 30px;
+  border-radius: 12px;
+  padding: 25px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-  transition: transform 0.3s;
-  /* Garante que os cards internos alinhem o conteúdo no topo */
+  text-align: left;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: 0;
 }
-.card:hover { transform: translateY(-5px); }
 
-/* Wanted Poster Style */
+.left-col .card { flex-grow: 1; }
+
 .wanted-card {
+  flex-grow: 0 !important;
   background: #f4e4bc !important;
   color: #2c1b0a !important;
-  border: 10px solid #3e2723 !important;
-  padding: 20px;
-  /* Garante que o Wanted Poster não estique */
-  align-self: center;
-  width: 90%;
+  border: 6px solid #3e2723 !important;
+  text-align: center;
 }
-.wanted-card h2 { color: #2c1b0a !important; text-shadow: none !important; font-family: 'Rye', cursive; font-size: 2.5rem; margin: 0;}
-.wanted-img { width: 100%; border: 3px solid #2c1b0a; margin: 15px 0; filter: sepia(0.5) contrast(1.2); }
+.wanted-card h2 { color: #2c1b0a !important; text-shadow: none !important; font-family: 'Rye', cursive; font-size: 2rem; margin: 5px 0;}
+.wanted-img { width: 100%; border: 2px solid #2c1b0a; margin: 10px 0; filter: sepia(0.3); }
 
-/* CORREÇÃO DO GRÁFICO: Aumentei a altura para 550px */
+.chart-card { flex-grow: 1; }
 .chart-wrapper {
-  height: 550px;
-  position: relative;
-  border-radius: 12px;
-  border: 2px solid #f5c542;
+  flex-grow: 1;
+  min-height: 450px;
+  border-radius: 8px;
+  border: 1px solid #f5c542;
   overflow: hidden;
-  margin-top: 15px;
 }
 .chart-wrapper iframe { width: 100%; height: 100%; border: none; }
 
-h2 { color: #f5c542; text-shadow: 0 0 10px rgba(245,197,66,0.5); margin-top: 0; margin-bottom: 15px; }
+h2 { color: #f5c542; text-shadow: 0 0 10px rgba(245,197,66,0.5); margin: 0 0 15px; font-size: 1.4rem; }
 .ca-box {
   background: #000;
   padding: 15px;
@@ -129,42 +97,35 @@ h2 { color: #f5c542; text-shadow: 0 0 10px rgba(245,197,66,0.5); margin-top: 0; 
   word-break: break-all;
   color: #00ff9f;
   font-family: monospace;
-  margin-top: 10px;
   font-size: 0.9rem;
+  text-align: center;
 }
-.ca-box:hover { background: #111; }
 
 .btn {
   display: inline-block;
-  padding: 16px 32px;
-  border-radius: 12px;
+  padding: 14px 20px;
+  border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
   transition: 0.3s;
   cursor: pointer;
   border: none;
+  text-align: center;
 }
 .buy-btn {
   background: #00ff9f;
   color: #000;
-  font-size: 1.6rem;
-  box-shadow: 0 0 30px rgba(0,255,159,0.6);
-  animation: pulse-buy 2s infinite;
-}
-@keyframes pulse-buy {
-  0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(0,255,159,0.6); }
-  50% { transform: scale(1.05); box-shadow: 0 0 50px rgba(0,255,159,0.9); }
+  font-size: 1.5rem;
+  box-shadow: 0 0 20px rgba(0,255,159,0.4);
+  margin-bottom: 20px;
 }
 
-footer { padding: 40px; opacity: 0.7; font-size: 0.9rem; margin-top: 50px; }
+footer { padding: 40px; opacity: 0.6; font-size: 0.8rem; }
 
-/* AJUSTE MOBILE */
 @media (max-width: 900px) {
-  .container { flex-direction: column; align-items: stretch; gap: 20px; }
-  .sidebar { width: 100%; min-width: auto; }
-  .chart-wrapper { height: 400px; }
-  h1 { font-size: 3.5rem; }
-  .buy-btn { font-size: 1.3rem; padding: 12px 24px; }
+  .container { grid-template-columns: 1fr; }
+  .left-col .card { flex-grow: 0; }
+  h1 { font-size: 3rem; }
 }
 </style>
 </head>
@@ -174,63 +135,63 @@ footer { padding: 40px; opacity: 0.7; font-size: 0.9rem; margin-top: 50px; }
 
 <header>
   <h1>CowboyDollar</h1>
-  <p style="font-size: 1.2rem;">The new law in the Solana trenches. Fill your bags with gold! 🤠💰</p>
-  
-  <a class="btn buy-btn" href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">
-    BUY $CWD ON PUMP.FUN
-  </a>
-
-  <div class="fomo-badge">
-    <strong>SHERIFF'S ALERT:</strong> Early riders get the bounty. Don't let the outlaws front-run you! 🐎🔥
-  </div>
+  <p style="margin-bottom: 20px;">The new law in the Solana trenches. 🤠💰</p>
+  <a class="btn buy-btn" href="https://pump.fun/coin/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank">BUY $CWD ON PUMP.FUN</a>
 </header>
 
 <div class="saddle-up">
-  <h2>🤠 Saddle Up, Partner!</h2>
   <div class="typewriter-text" id="typed-text"></div>
 </div>
 
 <div class="container">
-  <div class="main-content">
+  <div class="left-col">
     <div class="card">
-      <h2>📜 The Manifesto</h2>
-      <p style="line-height: 1.6;">In a lawless land of crypto... where only the bold survive, a new currency rises from the dust. CowboyDollar isn't just a meme — it's the gold standard of the Wild West. We're here to clean up the streets and reward the posse.</p>
+<div class="card">
+  <h2>📜 The Manifesto</h2>
+  <p style="line-height: 1.5; margin-bottom: 20px; font-size: 1rem;">
+    In a lawless land of crypto... where only the bold survive, CowboyDollar is the gold standard of the Wild West. We're here to clean up the streets and reward the posse.
+  </p>
+  
+  <div style="background: rgba(245,197,66,0.1); border-left: 4px solid #f5c542; padding: 20px; border-radius: 8px; box-shadow: inset 0 0 15px rgba(245,197,66,0.05);">
+    <strong style="color: #f5c542; font-size: 1.1rem; display: block; margin-bottom: 15px; text-shadow: 0 0 10px rgba(245,197,66,0.3);">
+        🤠 Sheriff's Rules (Tokenomics):
+    </strong>
+    <div style="font-size: 1.1rem; line-height: 2.2; color: #fff;">
+        • <span style="color: #ffd700;">Supply:</span> 1,000,000,000 $CWD 💰<br>
+        • <span style="color: #ffd700;">Tax:</span> 0% Buy / 0% Sell 🚫🏦<br>
+        • <span style="color: #ffd700;">LP:</span> Burned / Locked Forever 🔥🔒
+    </div>
+  </div>
+</div>
+      </div>
     </div>
 
-    <div class="card" onclick="copyCA()">
-      <h2>📄 Contract Address (Click to Copy)</h2>
+    <div class="card" onclick="copyCA()" style="flex-grow: 0;">
+      <h2>📄 Contract Address</h2>
       <div class="ca-box" id="ca-text">4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump</div>
+      <p style="font-size: 0.7rem; color: #00ff9f; margin-top: 5px; text-align: center;">(Click to Copy)</p>
     </div>
 
     <div class="card">
       <h2>🔗 Join the Posse</h2>
-      <p style="margin-bottom: 20px;">Don't ride alone. Connect with the official Cowboy Dollar community.</p>
-      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
         <a class="btn" href="https://x.com/CowbowDollar" target="_blank" style="background:#fff; color:#000;">X / TWITTER</a>
         <a class="btn" href="https://t.me/+Za5YKH9mpdZlNTk5" target="_blank" style="background:#24A1DE; color:#fff;">TELEGRAM</a>
-        <a class="btn" href="whitepaper.html" target="_blank" style="background:#f5c542; color:#000;">WHITEPAPER</a>
       </div>
-    </div>
-    
-    <div class="card">
-      <h2>🛡️ Security</h2>
-      <p style="margin-bottom: 15px;">Community driven. Liquidity managed by Pump.fun protocol. Check the automated audit below.</p>
-      <a class="btn" href="https://tokensniffer.com/token/solana/4nRDKDaEcEPinwfk8g1CX9GSsn8BGJVw6R2Ck3Sqpump" target="_blank" style="border: 1px solid #f5c542; color: #f5c542; background: transparent;">Check TokenSniffer 🛡️</a>
+      <a class="btn" href="whitepaper.html" target="_blank" style="background:#f5c542; color:#000; width:100%; box-sizing:border-box;">READ WHITEPAPER</a>
     </div>
   </div>
 
-  <div class="sidebar">
+  <div class="right-col">
     <div class="card wanted-card">
-      <p style="font-weight: bold; letter-spacing: 5px; margin: 0 0 10px;">DEAD OR ALIVE</p>
+      <p style="font-weight: bold; letter-spacing: 3px; margin: 0; font-size: 0.8rem;">DEAD OR ALIVE</p>
       <h2>WANTED</h2>
       <img src="./logo.png" class="wanted-img" alt="Cowboy Dollar Logo">
-      <p style="font-family: 'Rye'; font-size: 1.2rem; margin: 10px 0 5px;">REWARD: 1000X GAINS</p>
-      <p style="font-size: 0.8rem; margin: 0;">For leading the Solana revolution.</p>
+      <p style="font-family: 'Rye'; font-size: 1.1rem; margin: 0;">REWARD: 1000X GAINS</p>
     </div>
 
-    <div class="card">
-      <h2>📊 Live Chart</h2>
-      <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 10px;">Tracking $CWD price and volume on GeckoTerminal</p>
+    <div class="card chart-card">
+      <h2 style="margin-bottom: 10px;">📊 Live Chart</h2>
       <div class="chart-wrapper">
         <iframe src="https://www.geckoterminal.com/solana/pools/F4tvJZX1oFEhPSR7eK6u92EEXLN6vWipPY6qzavuF8i5?embed=1&info=0&light_chart=0"></iframe>
       </div>
@@ -238,44 +199,37 @@ footer { padding: 40px; opacity: 0.7; font-size: 0.9rem; margin-top: 50px; }
   </div>
 </div>
 
-<footer>
-  © 2026 CowboyDollar - Ride with us or stay in the dust.
-</footer>
+<footer>© 2026 CowboyDollar - Ride with us or stay in the dust.</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
 <script>
-// Gold Star Particles
 tsParticles.load("tsparticles", {
   particles: {
-    number: { value: 60 },
+    number: { value: 40 },
     color: { value: ["#f5c542", "#ffffff", "#ffd700"] },
     shape: { type: "star" },
-    opacity: { value: 0.6, random: true },
-    size: { value: { min: 1, max: 3 } },
-    move: { enable: true, speed: 1.5, direction: "bottom", outModes: "out" }
+    opacity: { value: 0.5 },
+    size: { value: { min: 1, max: 2 } },
+    move: { enable: true, speed: 1, direction: "bottom", outModes: "out" }
   }
 });
 
-// Typewriter
 const textElement = document.getElementById('typed-text');
-const fullText = "Tired of dog, cat, monkey & frog tokens? Saddle up on this fearless cowboy's horse and ride through the Wild West of crypto in search of success! Let's go together! 🤠🐎🚀";
+const fullText = "Tired of dog, cat, monkey & frog tokens? Saddle up on this fearless cowboy's horse and ride through the Wild West! 🤠🐎🚀";
 let index = 0;
 function type() {
   if (index < fullText.length) {
     textElement.innerHTML += fullText.charAt(index);
     index++;
     setTimeout(type, 40);
-  } else {
-    textElement.innerHTML += '<span class="cursor"></span>';
   }
 }
 window.onload = type;
 
-// Copy CA
 function copyCA() {
   const text = document.getElementById('ca-text').innerText;
   navigator.clipboard.writeText(text);
-  alert("Contract Copied! Time to buy, partner! 🤠💰");
+  alert("Contract Copied! 🤠💰");
 }
 </script>
 </body>
