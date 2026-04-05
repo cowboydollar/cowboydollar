@@ -21,7 +21,7 @@ body {
 header { padding: 40px 20px 20px; }
 h1 {
   font-family: 'Rye', cursive;
-  font-size: clamp(2.5rem, 8vw, 4.5rem); 
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   color: #f5c542;
   margin: 0 0 10px;
   text-shadow: 0 0 20px rgba(245,197,66,0.8);
@@ -36,7 +36,7 @@ h1 {
 }
 .typewriter-text { font-size: 1.1rem; color: #ffd700; min-height: 40px; line-height: 1.5; }
 
-/* GRID SYSTEM - NIVELAMENTO TOTAL */
+/* GRID SYSTEM */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -44,15 +44,13 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  align-items: stretch; /* Faz as duas colunas terem a mesma altura */
+  align-items: stretch;
 }
-
 .left-col, .right-col {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
 .card {
   background: rgba(20, 15, 10, 0.9);
   border: 1px solid #f5c542;
@@ -63,8 +61,6 @@ h1 {
   display: flex;
   flex-direction: column;
 }
-
-/* Deixa o Manifesto e o Gráfico ocuparem o espaço disponível para alinhar */
 .expand-card { flex-grow: 1; }
 
 .wanted-card {
@@ -141,7 +137,6 @@ h2 { color: #f5c542; text-shadow: 0 0 10px rgba(245,197,66,0.5); margin: 0 0 15p
 }
 @keyframes bar-load { from { width: 0; } to { width: 65%; } }
 
-/* ROADMAP LIST STYLING */
 .roadmap-step { margin-bottom: 15px; border-left: 2px solid #f5c542; padding-left: 15px; }
 .roadmap-step strong { color: #f5c542; display: block; font-size: 0.9rem; }
 .roadmap-step span { font-size: 0.85rem; color: #ccc; }
@@ -170,18 +165,19 @@ footer { padding: 40px; opacity: 0.6; font-size: 0.8rem; }
 
 <div class="container">
   <div class="left-col">
+    
+    <!-- NOVO MANIFESTO -->
     <div class="card">
       <h2>📜 The Manifesto</h2>
-      <p style="line-height: 1.6; margin-bottom: 15px; font-size: 1.05rem;">
-        In a lawless land of crypto, CowboyDollar is the gold standard. We're here to clean up the streets and reward the posse.
+      <p style="line-height: 1.7; font-size: 1.05rem;">
+        This is the Wild West of crypto.<br><br>
+        While others chase quick rugs, CowboyDollar rides with honor.<br><br>
+        • Contract renounced<br>
+        • Liquidity locked<br>
+        • CEO holds zero tokens<br><br>
+        Here the strong protect the weak and the early rider is rewarded.<br><br>
+        Saddle up. The real ride is just beginning. 🤠
       </p>
-      <div style="background: rgba(245,197,66,0.1); border-left: 4px solid #f5c542; padding: 15px; border-radius: 8px;">
-        <div style="font-size: 1rem; line-height: 1.8; color: #fff; font-weight: bold;">
-            • Supply: 1,000,000,000 $CWD 💰<br>
-            • Tax: 0% Buy / 0% Sell 🚫🏦<br>
-            • LP: Burned Forever 🔥🔒
-        </div>
-      </div>
     </div>
 
     <div class="card expand-card">
@@ -229,7 +225,6 @@ footer { padding: 40px; opacity: 0.6; font-size: 0.8rem; }
       <img src="./logo.png" class="wanted-img" alt="Cowboy Dollar Logo">
       <p style="font-family: 'Rye'; font-size: 1.1rem; margin: 0;">REWARD: 1000X GAINS</p>
     </div>
-
     <div class="card expand-card">
       <h2 style="margin-bottom: 10px;">📊 Live Chart</h2>
       <div class="chart-wrapper">
